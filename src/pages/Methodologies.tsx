@@ -1,6 +1,6 @@
-import { Row, Col, Card, Alert, Badge, ListGroup } from 'react-bootstrap';
+import { Row, Col, Card, Alert, ListGroup } from 'react-bootstrap';
 import methodologiesData from '../data/methodologies.json';
-import { GitBranch, CheckCircle, XCircle, HelpCircle, Lightbulb, AlertTriangle, Target } from 'lucide-react';
+import { GitBranch, CheckCircle, XCircle, HelpCircle, AlertTriangle, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Methodologies = () => {

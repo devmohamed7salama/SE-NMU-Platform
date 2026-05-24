@@ -4,6 +4,19 @@ import { CheckSquare, CheckCircle, XCircle, AlertTriangle } from 'lucide-react';
 import examData from '../data/exam-questions.json';
 import { motion, AnimatePresence } from 'framer-motion';
 
+interface Question {
+  id: string;
+  type: string;
+  questionEn: string;
+  questionAr: string;
+  options: string[];
+  correctAnswer: number;
+  explanationAr: string;
+  keywords?: string[];
+}
+
+const typedExamData = examData as Question[];
+
 const ExamPrep = () => {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, number | string>>({});
   const [showResults, setShowResults] = useState<Record<string, boolean>>({});
@@ -27,7 +40,7 @@ const ExamPrep = () => {
       </div>
 
       <div className="questions-container">
-        {examData.map((q, index) => {
+        {typedExamData.map((q, index) => {
           const isAnswered = selectedAnswers[q.id] !== undefined;
           const isChecked = showResults[q.id];
           const isCorrect = selectedAnswers[q.id] === q.correctAnswer;
