@@ -1,41 +1,51 @@
 {
-  "title": "ليلة الامتحان - الخلاصة",
-  "subtitle": "ركز على النقط دي كويس جداً عشان دي بتيجي في الامتحان بشكل متكرر",
+  "title": "ليلة الامتحان - كبسولة الخلاصة",
+  "subtitle": "دي تجميعة لكل التركات اللي بتكرر في الامتحانات، ركز فيها عشان تضمن الدرجة النهائية إن شاء الله.",
   "sections": [
     {
-      "title": "الفرق بين الـ Aggregation والـ Composition (مهم جداً)",
+      "title": "١. أنواع نماذج التطوير (SDLC Models)",
       "points": [
-        "Aggregation: معين فاضي (Hollow Diamond). علاقة ضعيفة. مثال: القسم والدكاترة.",
-        "Composition: معين أسود (Filled Diamond). علاقة قوية جداً. مثال: الفندق والغرف."
+        "Waterfall: خطي (Linear)، متطلبات ثابتة (Frozen)، مفيش Feedback بدري.",
+        "Iterative: دورات تكرارية، أحسن للمتطلبات غير الواضحة.",
+        "Agile: مرونة قصوى، كود شغال أهم من التوثيق، تعاون مع العميل.",
+        "Spiral Model: لو شفت كلمة 'مخاطر' (Risk Analysis) اختاره فوراً.",
+        "Incremental: بنسلم السيستم على أجزاء، الأهم فالأهم (Priority).",
+        "CBSE: تجميع (Assembling) مكونات جاهزة (COTS) لتوفير الوقت."
       ]
     },
     {
-      "title": "Include vs Extend في الـ Use Case",
+      "title": "٢. أركان السوفت وير الجيد (Attributes)",
       "points": [
-        "Include: إجباري (Mandatory). السهم المنقط رايح من الأساسي للـ included.",
-        "Extend: اختياري (Optional). السهم المنقط طالع من الـ extend ورايح للأساسي."
+        "Maintainability: نقدر نعدله بسهولة (أهم صفة للاستمرارية).",
+        "Efficiency: مبيستهلكش موارد الجهاز (RAM/CPU).",
+        "Acceptability: اليوزر فاهمه وعارف يستخدمه.",
+        "Reliability: موثوق ومبيقعش تحت ضغط الشغل."
       ]
     },
     {
-      "title": "SDLC Models الاختيارات في الامتحان",
+      "title": "٣. المتطلبات (Requirements Engineering)",
       "points": [
-        "لو المتطلبات ثابتة ومش هتتغير: Waterfall",
-        "لو المتطلبات بتتغير بسرعة ومحتاجين نخلص جزء يشتغل بسرعة: Agile أو Iterative",
-        "لو المشروع فيه مخاطر كبيرة (High Risk): Spiral Model"
+        "Functional: السيستم بيعمل إيه (سحب فلوس، تسجيل طالب).",
+        "Non-Functional: جودة السيستم (سرعة، أمان، توافق).",
+        "مستند الـ SRS: لازم يكون كامل (Complete) وقابل للقياس (Verifiable).",
+        "Elicitation: جمع المتطلبات (المقابلات هي الأشهر، الاستبيانات للعدد الكبير)."
       ]
     },
     {
-      "title": "Functional vs Non-Functional",
+      "title": "٤. أساسيات التصميم (Design Principles)",
       "points": [
-        "Functional: السيستم بيعمل إيه (WHAT). زي إن اليوزر يعمل Login.",
-        "Non-Functional: السيستم بيعمله إزاي (HOW). السرعة، الأمان، الاعتمادية. دي لو باظت السيستم يترمى."
+        "Cohesion: ترابط الموديول من جوه (الهدف: High Cohesion).",
+        "Coupling: اعتماد الموديولات على بعضها (الهدف: Low Coupling).",
+        "Abstraction: إخفاء التفاصيل غير المهمة والتركيز على الأساسيات."
       ]
     },
     {
-      "title": "Cohesion vs Coupling",
+      "title": "٥. تريكات الـ UML Diagrams",
       "points": [
-        "Cohesion (ترابط الموديول من جوه): لازم يكون High (عالي).",
-        "Coupling (اعتماد الموديولات على بعضها): لازم يكون Low (قليل)."
+        "Class Diagram: معين أسود (Composition - قوي)، معين فاضي (Aggregation - ضعيف).",
+        "Activity Diagram: خط تخين بيقسم (Fork)، خط تخين بيجمع (Join).",
+        "Sequence Diagram: خط منقط (Lifeline)، مستطيل (Activation)، سهم منقط (Return).",
+        "Use Case: الـ Include إجباري، الـ Extend اختياري."
       ]
     }
   ]

@@ -3,35 +3,140 @@
     "id": "fc1",
     "frontEn": "Waterfall Model",
     "frontAr": "نموذج الووترفول (الشلال)",
-    "backEn": "A linear, sequential model where each phase must be completed before the next begins.",
-    "backAr": "نموذج خطي متسلسل، كل مرحلة لازم تخلص عشان اللي بعدها تبدأ. متطلباته ثابتة (Frozen) والتعديل فيه صعب."
+    "backEn": "Linear, sequential model. Requirements must be frozen. No early feedback.",
+    "backAr": "نموذج خطي متسلسل. لازم المتطلبات تكون ثابتة (Frozen). مفيش فيه Feedback مبكر."
   },
   {
     "id": "fc2",
-    "frontEn": "Aggregation vs Composition",
-    "frontAr": "الفرق بين الـ Aggregation والـ Composition",
-    "backEn": "Aggregation: Weak relationship (Hollow diamond). Composition: Strong relationship (Filled diamond).",
-    "backAr": "Aggregation: علاقة ضعيفة وينفصلوا (معين فاضي). Composition: علاقة قوية ولا ينفصلوا (معين مظلل أسود)."
+    "frontEn": "Agile Methodology",
+    "frontAr": "منهجية الأجايل",
+    "backEn": "Iterative, flexible, focuses on working software and customer collaboration.",
+    "backAr": "منهج تكراري ومرن، بيركز على الكود الشغال والتعاون مع العميل."
   },
   {
     "id": "fc3",
-    "frontEn": "Functional Requirements",
-    "frontAr": "المتطلبات الوظيفية",
-    "backEn": "Describe WHAT the system should do (e.g., login, add to cart).",
-    "backAr": "بتوصف 'إيه' اللي السيستم لازم يعمله (زي الدخول أو الشراء). لو مش موجودة، السيستم مش هيشتغل كـ Function."
+    "frontEn": "Spiral Model",
+    "frontAr": "النموذج الحلزوني",
+    "backEn": "Risk-driven model. Combines iterative and waterfall elements. Uses risk analysis loops.",
+    "backAr": "نموذج مبني على المخاطر. بيجمع بين الشلال والتكراري. بيستخدم دورات تحليل المخاطر."
   },
   {
     "id": "fc4",
-    "frontEn": "Non-Functional Requirements",
-    "frontAr": "المتطلبات الغير وظيفية",
-    "backEn": "Describe HOW the system should operate (e.g., performance, security).",
-    "backAr": "بتوصف 'إزاي' السيستم بيشتغل. بتشمل السرعة، الأمان، الاعتمادية. دي ممكن لو مش موجودة تخلي السيستم Useless."
+    "frontEn": "High Cohesion",
+    "frontAr": "ترابط عالي",
+    "backEn": "Elements inside a module work together for a single, well-defined purpose. (Good design).",
+    "backAr": "كل حاجة جوه الموديول بتخدم هدف واحد ومحدد. ده علامة على التصميم الجيد."
   },
   {
     "id": "fc5",
-    "frontEn": "Include vs Extend",
-    "frontAr": "الفرق بين Include و Extend",
-    "backEn": "Include is mandatory. Extend is optional.",
-    "backAr": "Include: لازم يحصل (إجباري). Extend: ممكن يحصل وممكن لأ (اختياري)."
+    "frontEn": "Low Coupling",
+    "frontAr": "اعتمادية منخفضة",
+    "backEn": "Minimal interdependence between different modules. (Good design).",
+    "backAr": "تقليل اعتماد الموديولات على بعضها. ده بيسهل التعديل والصيانة."
+  },
+  {
+    "id": "fc6",
+    "frontEn": "Composition",
+    "frontAr": "علاقة تكوين (قوية)",
+    "backEn": "Strong whole-part relationship. Parts cannot exist without the whole. (Filled diamond).",
+    "backAr": "علاقة قوية (جزء من كل). الجزء بيموت لو الكل اتمسح. رمزها معين أسود."
+  },
+  {
+    "id": "fc7",
+    "frontEn": "Aggregation",
+    "frontAr": "علاقة تجميع (ضعيفة)",
+    "backEn": "Weak whole-part relationship. Parts can exist independently. (Hollow diamond).",
+    "backAr": "علاقة ضعيفة (جزء من كل). الجزء ممكن يعيش لوحده. رمزها معين فاضي."
+  },
+  {
+    "id": "fc8",
+    "frontEn": "Verification",
+    "frontAr": "التحقق (Verification)",
+    "backEn": "Are we building the product right? (Focus on process and specs).",
+    "backAr": "هل بنبني المنتج صح؟ (بنركز على اتباع المواصفات والخطوات)."
+  },
+  {
+    "id": "fc9",
+    "frontEn": "Validation",
+    "frontAr": "التحقق من الصحة (Validation)",
+    "backEn": "Are we building the right product? (Does it meet customer needs?)",
+    "backAr": "هل بنبني المنتج المطلوب فعلاً؟ (هل بيحقق احتياجات العميل؟)."
+  },
+  {
+    "id": "fc10",
+    "frontEn": "Lifeline",
+    "frontAr": "خط الحياة (Sequence)",
+    "backEn": "Dotted vertical line in Sequence Diagram showing object existence over time.",
+    "backAr": "خط رأسي منقط في الـ Sequence Diagram بيبين وجود الأوبجكت مع الوقت."
+  },
+  {
+    "id": "fc11",
+    "frontEn": "Fork (Activity)",
+    "frontAr": "التفريع (Fork)",
+    "backEn": "Splits one flow into multiple parallel (concurrent) flows.",
+    "backAr": "بيقسم المسار الواحد لكذا مسار شغالين في نفس الوقت (Parallel)."
+  },
+  {
+    "id": "fc12",
+    "frontEn": "Join (Activity)",
+    "frontAr": "التجميع (Join)",
+    "backEn": "Combines multiple parallel flows back into a single flow.",
+    "backAr": "بيجمع المسارات المتوازية تاني في مسار واحد."
+  },
+  {
+    "id": "fc13",
+    "frontEn": "SRS Document",
+    "frontAr": "مستند الـ SRS",
+    "backEn": "Formal document describing system requirements. Must be Complete and Verifiable.",
+    "backAr": "مستند رسمي بيوصف متطلبات السيستم. لازم يكون كامل وقابل للقياس."
+  },
+  {
+    "id": "fc14",
+    "frontEn": "Visibility: '+'",
+    "frontAr": "الرؤية: علامة الزائد",
+    "backEn": "Public visibility: attribute or method is accessible to all classes.",
+    "backAr": "رؤية عامة (Public): أي كلاس تقدر تشوف وتستخدم العنصر ده."
+  },
+  {
+    "id": "fc15",
+    "frontEn": "Visibility: '-'",
+    "frontAr": "الرؤية: علامة الناقص",
+    "backEn": "Private visibility: accessible only within the class itself.",
+    "backAr": "رؤية خاصة (Private): مفيش حد بيشوف العنصر غير الكلاس نفسه."
+  },
+  {
+    "id": "fc16",
+    "frontEn": "Maintainability",
+    "frontAr": "قابلية الصيانة",
+    "backEn": "Software should be written so it can evolve to meet changing needs.",
+    "backAr": "قدرة السوفت وير إنه يتطور ويتعدل بسهولة عشان يواكب التغييرات."
+  },
+  {
+    "id": "fc17",
+    "frontEn": "Efficiency",
+    "frontAr": "الكفاءة",
+    "backEn": "Software should not waste system resources like memory or CPU.",
+    "backAr": "السوفت وير لازم ميسربش موارد الجهاز زي الرام والمعالج."
+  },
+  {
+    "id": "fc18",
+    "frontEn": "CBSE",
+    "frontAr": "التطوير القائم على المكونات",
+    "backEn": "Building systems by assembling existing reusable components (COTS).",
+    "backAr": "بناء السيستم عن طريق تجميع حتت جاهزة (Components) موجودة قبل كدة."
+  },
+  {
+    "id": "fc19",
+    "frontEn": "Decision Node",
+    "frontAr": "نقطة القرار",
+    "backEn": "Diamond shape in Activity Diagrams for if/else logic.",
+    "backAr": "شكل المعين في الـ Activity Diagram اللي بيمثل الـ If/Else."
+  },
+  {
+    "id": "fc20",
+    "frontEn": "Non-Functional Req.",
+    "frontAr": "متطلبات غير وظيفية",
+    "backEn": "Define system properties and constraints (Security, Speed, Storage).",
+    "backAr": "بتوصف خصائص السيستم والقيود اللي عليه (أمان، سرعة، تخزين)."
   }
 ]

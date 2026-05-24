@@ -3,11 +3,11 @@
     "id": "q1",
     "type": "MCQ",
     "questionEn": "Which software process model assumes requirements are frozen and has no early feedback?",
-    "questionAr": "أي نموذج تطوير يفترض أن المتطلبات ثابتة ولا يوجد فيه تقييم مبكر من العميل؟",
+    "questionAr": "أي نموذج تطوير يفترض أن المتطلبات ثابتة (Frozen) ولا يوجد فيه تقييم مبكر من العميل؟",
     "options": ["Waterfall", "Agile", "Spiral", "Iterative"],
     "correctAnswer": 0,
-    "explanationAr": "الـ Waterfall بيمشي في خط مستقيم (Linear)، كل مرحلة بتخلص بالكامل قبل اللي بعدها، ومفيش فرصة تاخد رأي العميل غير في الآخر خالص.",
-    "keywords": ["frozen requirements", "no early feedback", "linear"]
+    "explanationAr": "الـ Waterfall بيمشي في خط مستقيم، كل مرحلة بتخلص بالكامل قبل اللي بعدها، وممنوع التعديل (Frozen) غير في الآخر خالص.",
+    "keywords": ["Frozen", "Linear", "No feedback"]
   },
   {
     "id": "q2",
@@ -16,8 +16,8 @@
     "questionAr": "في مخطط الفئات (Class Diagram)، ماذا يمثل المعين المظلل باللون الأسود؟",
     "options": ["Association", "Aggregation", "Composition", "Generalization"],
     "correctAnswer": 2,
-    "explanationAr": "المعين الأسود (Filled diamond) بيمثل الـ Composition، ودي علاقة قوية جداً (جزء من كل)، زي الفندق والغرف. لو الفندق اتهد، الغرف هتنتهي. المعين الفاضي (Hollow) بيمثل الـ Aggregation.",
-    "keywords": ["filled diamond", "strong relationship", "Composition"]
+    "explanationAr": "المعين الأسود يعني Composition، ودي علاقة 'تملك قوي'، لو الأب اتمسح الابن يتمسح معاه (زي الفندق والغرف).",
+    "keywords": ["Strong", "Part-of", "Composition"]
   },
   {
     "id": "q3",
@@ -26,77 +26,127 @@
     "questionAr": "الـ DevOps يُعتبر نموذجاً لعملية تطوير البرمجيات (Software Process Model).",
     "options": ["True", "False"],
     "correctAnswer": 1,
-    "explanationAr": "خطأ. الـ DevOps مش Process Model، هو ثقافة (Culture) ونهج إدارة (Management approach) بيربط بين التطوير (Development) والتشغيل (Operations).",
-    "keywords": ["DevOps", "not a process model", "culture"]
+    "explanationAr": "خطأ. الـ DevOps هو 'ثقافة' (Culture) مش بروسيس موديل.",
+    "keywords": ["Culture", "Not a model"]
   },
   {
     "id": "q4",
     "type": "Scenario",
-    "questionEn": "A customer wants an e-commerce website. The requirements are poorly understood and likely to change. Which model should you use?",
-    "questionAr": "عميل عايز موقع تجارة إلكترونية، بس المتطلبات مش واضحة وغالباً هتتغير كتير. إيه أفضل نموذج نستخدمه؟",
-    "options": ["Waterfall", "Agile/Iterative", "Component-Based (CBSE)", "V-Model"],
+    "questionEn": "Requirements are poorly understood and likely to change. Which model should you use?",
+    "questionAr": "المتطلبات مش واضحة وغالباً هتتغير كتير. إيه أفضل نموذج نستخدمه؟",
+    "options": ["Waterfall", "Agile/Iterative", "CBSE", "V-Model"],
     "correctAnswer": 1,
-    "explanationAr": "الـ Agile أو الـ Iterative هما الأفضل هنا، لإنهم مرنين وبيتقبلوا التغييرات (Changing requirements) وبيسمحوا للعميل يشوف أجزاء شغالة بدري (Early delivery).",
-    "keywords": ["poorly understood", "likely to change", "Agile"]
+    "explanationAr": "الـ Agile هو الأنسب للمتطلبات المتغيرة وغير الواضحة.",
+    "keywords": ["Flexible", "Iterative", "Agile"]
   },
   {
     "id": "q5",
     "type": "MCQ",
-    "questionEn": "What is the outcome of high-quality software engineering according to the course?",
-    "questionAr": "ما هي النتيجة النهائية لهندسة البرمجيات عالية الجودة حسب المقرر؟",
-    "options": ["Fastest code only", "Efficient, maintainable, and reliable product", "Cheapest development cost", "Complex algorithms"],
+    "questionEn": "What does '1..*' multiplicity mean in a Class Diagram?",
+    "questionAr": "ماذا تعني التعددية (Multiplicity) من النوع '1..*'؟",
+    "options": ["Zero or many", "One or many", "Exactly one", "From 1 to 10"],
     "correctAnswer": 1,
-    "explanationAr": "الهدف الأساسي هو إنتاج سوفت وير يكون Efficient (فعال)، Maintainable (سهل الصيانة)، و Reliable (موثوق).",
-    "keywords": ["outcome", "Efficient", "Maintainable", "Reliable"]
+    "explanationAr": "الرمز '*' يعني many، والرقم اللي قبل النقطتين هو الحد الأدنى. يبقى 'واحد أو أكتر'.",
+    "keywords": ["One or more", "Many"]
   },
   {
     "id": "q6",
     "type": "MCQ",
-    "questionEn": "In the Spiral model, what is the key activity performed in each loop?",
-    "questionAr": "في النموذج الحلزوني (Spiral Model)، ما هو النشاط الجوهري الذي يتم في كل لفة؟",
-    "options": ["Coding", "Risk Analysis", "Marketing", "Documentation"],
-    "correctAnswer": 1,
-    "explanationAr": "الـ Spiral Model هو 'Risk-driven'، يعني كل لفة لازم تبدأ وتتمحور حول تحليل المخاطر (Risk Analysis).",
-    "keywords": ["Spiral", "Risk Analysis"]
+    "questionEn": "Which model is specifically 'Risk-Driven'?",
+    "questionAr": "أي نموذج تطوير هو نموذج 'قائم على المخاطر' (Risk-Driven) بشكل أساسي؟",
+    "options": ["Waterfall", "Agile", "Spiral Model", "Incremental"],
+    "correctAnswer": 2,
+    "explanationAr": "الـ Spiral Model (نموذج بوم) بيعتمد في كل لفة على الـ Risk Analysis.",
+    "keywords": ["Risk analysis", "Spiral"]
   },
   {
     "id": "q7",
-    "type": "TrueFalse",
-    "questionEn": "Non-functional requirements specify what the system should do.",
-    "questionAr": "المتطلبات غير الوظيفية (Non-functional) بتحدد 'إيه' اللي السيستم لازم يعمله.",
-    "options": ["True", "False"],
+    "type": "MCQ",
+    "questionEn": "What is the primary focus of Software Specification (Analysis) phase?",
+    "questionAr": "ما هو التركيز الأساسي لمرحلة التحليل (Analysis/Specification)؟",
+    "options": ["HOW to build the system", "WHAT the system should do", "Coding the system", "Installing the system"],
     "correctAnswer": 1,
-    "explanationAr": "خطأ. اللي بيحدد السيستم بيعمل 'إيه' (WHAT) هي الـ Functional. أما الـ Non-functional بتحدد السيستم بيشتغل 'إزاي' (HOW) زي السرعة والأمان.",
-    "keywords": ["Non-functional", "what vs how"]
+    "explanationAr": "التحليل بيركز على 'إيه' (WHAT) اللي السيستم لازم يعمله، مش 'إزاي'.",
+    "keywords": ["What", "Requirements"]
   },
   {
     "id": "q8",
-    "type": "MCQ",
-    "questionEn": "In a UML sequence diagram, what does an 'X' mark at the end of a lifeline represent?",
-    "questionAr": "في مخطط التسلسل (Sequence Diagram)، علامة الـ 'X' في آخر الـ lifeline بتمثل إيه؟",
-    "options": ["Error", "End of message", "Destroy Message / Object termination", "Wait for reply"],
-    "correctAnswer": 2,
-    "explanationAr": "علامة الـ 'X' بتعني الـ Destroy Message، يعني الأوبجكت ده حياته خلصت (Object termination).",
-    "keywords": ["X mark", "Destroy", "termination"]
+    "type": "TrueFalse",
+    "questionEn": "A hollow diamond represents Aggregation relationship.",
+    "questionAr": "المعين الفاضي (Hollow diamond) بيمثل علاقة الـ Aggregation.",
+    "options": ["True", "False"],
+    "correctAnswer": 0,
+    "explanationAr": "صح. الـ Aggregation علاقة ضعيفة وبنرمز ليها بمعين فاضي.",
+    "keywords": ["Hollow", "Weak", "Aggregation"]
   },
   {
     "id": "q9",
     "type": "MCQ",
-    "questionEn": "Which of these is a characteristic of the CBSE (Component-Based) model?",
-    "questionAr": "إيه من دول من مميزات الـ CBSE (التطوير القائم على المكونات)؟",
-    "options": ["Developing everything from scratch", "Assembling existing reusable components", "High risk of failure", "Minimal use of documentation"],
-    "correctAnswer": 1,
-    "explanationAr": "الـ CBSE بيعتمد على تجميع مكونات جاهزة (Assembling reusable components) بدل بناء كل حاجة من الأول.",
-    "keywords": ["CBSE", "Reusable components"]
+    "questionEn": "In a Sequence Diagram, time progresses in which direction?",
+    "questionAr": "في مخطط التسلسل (Sequence Diagram)، الوقت بيمشي في أي اتجاه؟",
+    "options": ["Left to Right", "Right to Left", "Top to Bottom", "Bottom to Top"],
+    "correctAnswer": 2,
+    "explanationAr": "الوقت بيمشي من فوق لتحت على طول الخط المنقط (Lifeline).",
+    "keywords": ["Top-down", "Sequence"]
   },
   {
     "id": "q10",
     "type": "MCQ",
-    "questionEn": "What is the goal of High Cohesion in software design?",
-    "questionAr": "إيه هو الهدف من الـ High Cohesion في تصميم البرمجيات؟",
-    "options": ["Make modules dependent on each other", "Make elements inside a module work together for a single purpose", "Reduce the size of the database", "Increase the number of actors"],
+    "questionEn": "Which design principle aims to make modules independent?",
+    "questionAr": "أي مبدأ تصميم يهدف لجعل الموديولات مستقلة عن بعضها؟",
+    "options": ["High Cohesion", "Low Coupling", "Abstraction", "Inheritance"],
     "correctAnswer": 1,
-    "explanationAr": "الـ High Cohesion يعني إن كل حاجة جوه الموديول الواحد شغالة مع بعض عشان وظيفة واحدة محددة، وده بيخلي الكود أحسن.",
-    "keywords": ["High Cohesion", "Single purpose"]
+    "explanationAr": "الـ Low Coupling يعني تقليل الاعتمادية بين الموديولات.",
+    "keywords": ["Low Coupling", "Independent"]
+  },
+  {
+    "id": "q11",
+    "type": "MCQ",
+    "questionEn": "What was the cause of the Ariane 5 rocket explosion?",
+    "questionAr": "ماذا كان سبب انفجار صاروخ Ariane 5؟",
+    "options": ["Hardware failure", "Fuel leak", "Software overflow error", "Human error"],
+    "correctAnswer": 2,
+    "explanationAr": "السبب كان خطأ في السوفت وير (Overflow Error) عند تحويل رقم كبير لمساحة تخزينية صغيرة.",
+    "keywords": ["Overflow", "Software failure"]
+  },
+  {
+    "id": "q12",
+    "type": "MCQ",
+    "questionEn": "What is COTS in the context of CBSE?",
+    "questionAr": "ماذا تعني كلمة COTS في سياق نموذج الـ CBSE؟",
+    "options": ["Coding on the spot", "Commercial Off-The-Shelf", "Component Oriented Testing", "Client Ordered System"],
+    "correctAnswer": 1,
+    "explanationAr": "COTS هي المكونات الجاهزة اللي بتتباع في السوق وبنجمعها مع بعض.",
+    "keywords": ["Off-the-shelf", "CBSE"]
+  },
+  {
+    "id": "q13",
+    "type": "MCQ",
+    "questionEn": "What does a Fork node represent in an Activity Diagram?",
+    "questionAr": "ماذا يمثل الـ Fork node في مخطط النشاط (Activity Diagram)؟",
+    "options": ["Decision point", "Merging flows", "Splitting into parallel flows", "End of process"],
+    "correctAnswer": 2,
+    "explanationAr": "الـ Fork بيقسم المسار الواحد لمسارات متوازية (Parallel) بتشتغل في نفس الوقت.",
+    "keywords": ["Parallel", "Split"]
+  },
+  {
+    "id": "q14",
+    "type": "TrueFalse",
+    "questionEn": "Software is just another word for computer programs.",
+    "questionAr": "البرمجيات (Software) هي مجرد كلمة تانية لكلمة برامج كمبيوتر (Programs).",
+    "options": ["True", "False"],
+    "correctAnswer": 1,
+    "explanationAr": "خطأ. السوفت وير بيشمل البرامج + التوثيق + إجراءات التشغيل.",
+    "keywords": ["Software vs Program"]
+  },
+  {
+    "id": "q15",
+    "type": "MCQ",
+    "questionEn": "Which requirement type is 'Performance' classified under?",
+    "questionAr": "تحت أي نوع تندرج متطلبات 'الأداء' (Performance)؟",
+    "options": ["Functional", "Non-Functional", "Domain", "Stakeholder"],
+    "correctAnswer": 1,
+    "explanationAr": "الأداء، الأمان، والسرعة كلها متطلبات غير وظيفية (Non-Functional).",
+    "keywords": ["Performance", "Non-Functional"]
   }
 ]

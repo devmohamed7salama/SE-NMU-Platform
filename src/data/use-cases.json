@@ -5,28 +5,23 @@
     "title": "Online Examination System",
     "titleAr": "نظام الامتحانات الإلكتروني",
     "actors": ["Student", "System", "Timer"],
-    "scenarioAr": "الطالب بيسجل دخول، لو البيانات صح بيختار الامتحان ويقرا التعليمات. السيستم بيبدأ يعرض الأسئلة ويسجل الإجابات وفي نفس الوقت بيراقب الوقت (تايمر). لما الوقت يخلص أو الطالب يخلص، السيستم بيصحح ويبعت النتيجة.",
+    "scenarioEn": "Student logs in with **valid credentials**. System displays **questions** one by one and records **answers**. Simultaneously, system monitors **remaining time**. After **submission** or **timeout**, results are evaluated.",
+    "scenarioAr": "الطالب بيسجل دخول بـ **بيانات صحيحة**. السيستم بيعرض **الأسئلة** واحد ورا التاني وبيسجل **الإجابات**. في نفس الوقت، السيستم بيراقب **الوقت المتبقي**. بعد **التسليم** أو **انتهاء الوقت**، بيتم التصحيح.",
     "mermaid": "stateDiagram-v2\n    [*] --> Login\n    Login --> CorrectCredentials?: [Check]\n    CorrectCredentials? --> Login: No\n    CorrectCredentials? --> SelectExam: Yes\n    SelectExam --> ReadInstructions\n    ReadInstructions --> ExamStarted\n    state ExamStarted {\n        direction LR\n        [*] --> DisplayQuestions\n        DisplayQuestions --> RecordAnswers\n        --\n        [*] --> MonitorTime\n    }\n    ExamStarted --> EvaluateAnswers: [Submit or Timeout]\n    EvaluateAnswers --> DisplayResult\n    DisplayResult --> [*]",
-    "highlights": ["Fork/Join (Parallel)", "Decision Node", "Iteration", "Merge"],
-    "examTricks": [
-      "لاحظ وجود عمليتين شغالين مع بعض (Parallel): مراقبة الوقت وتسجيل الإجابات.",
-      "الـ Decision node هو المعين اللي بنحدد بيه اليوزر نيم صح ولا غلط."
-    ]
+    "examStrategyAr": "في الامتحان لو جالك السؤال ده، هتعرف الـ **Actors** من الأشخاص أو الأنظمة اللي بتشارك (هنا الطالب والتايمر). الـ **Decision Node** (المعين) هتحطه لما يكون فيه احتمالين زي (بيانات صح أو غلط). وكلمة 'Simultaneously' أو 'في نفس الوقت' معناها إنك لازم تستخدم **Fork** و **Join** عشان توضح إن فيه حاجتين شغالين مع بعض.",
+    "highlights": ["Fork/Join (Parallel)", "Decision Node", "Simultaneously"]
   },
   {
     "id": "uc-2",
     "category": "Activity Diagram",
     "title": "Process Order (Parallelism)",
-    "titleAr": "عملية معالجة الطلبات (التوازي)",
-    "actors": ["Customer", "System"],
-    "scenarioAr": "لما العميل يطلب أوردر، السيستم بيقسم الشغل لنصين شغالين مع بعض: نص بيجهز الشحنة (Warehouse) ونص بيخلص الفواتير (Billing). لازم النصين يخلصوا عشان الأوردر يتقفل.",
+    "titleAr": "عملية معالجة الطلبات",
+    "actors": ["Customer", "System", "Warehouse", "Billing"],
+    "scenarioEn": "Customer places an **order**. System starts two **parallel activities**: one side handles **filling and sending** the order, while other manages **billing**. After both are **completed**, order is closed.",
+    "scenarioAr": "العميل بيطلب **أوردر**. السيستم بيبدأ عمليتين **بالتوازي**: ناحية بتجهز **الشحن**، والناحية التانية بتخلص **الحسابات**. بعد ما الاتنين **يخلصوا**، الأوردر بيتقفل.",
     "mermaid": "stateDiagram-v2\n    [*] --> ReceivedOrder\n    state fork_state <<fork>>\n    ReceivedOrder --> fork_state\n    fork_state --> FillOrder\n    fork_state --> SendInvoice\n    FillOrder --> OvernightDelivery: [Fast?]\n    FillOrder --> RegularDelivery: [Not Fast?]\n    state join_state <<join>>\n    OvernightDelivery --> join_state\n    RegularDelivery --> join_state\n    SendInvoice --> MakePayment\n    state join_state_final <<join>>\n    join_state --> join_state_final\n    MakePayment --> join_state_final\n    join_state_final --> CloseOrder\n    CloseOrder --> [*]",
-    "highlights": ["Fork", "Join", "Decision", "Merge"],
-    "examTricks": [
-      "الـ Fork بيبدأ بسهم واحد وطالع منه سهمين.",
-      "الـ Join بياخد كذا سهم ويطلع سهم واحد.",
-      "ممنوع تقفل الأوردر غير لما الـ Billing والـ Warehouse يخلصوا سوا."
-    ]
+    "examStrategyAr": "لما تلاقي في المسألة إن السيستم بيتقسم لفرعين (Divides into two parallel activities)، ده معناه فوراً إنك هترسم **Fork** (الخط التخين). ولما يقولك إنهم بيتجمعوا في الآخر (Combined) يبقى هترسم **Join**. خد بالك إن الـ Overnight و الـ Regular دي طرق شحن، يعني اختيار (Decision).",
+    "highlights": ["Parallel Activities", "Combined", "Fork/Join"]
   },
   {
     "id": "uc-3",
@@ -34,14 +29,11 @@
     "title": "User Login Process",
     "titleAr": "عملية تسجيل دخول المستخدم",
     "actors": ["User", "Login Page", "Auth Service", "Database"],
-    "scenarioAr": "اليوزر بيدخل بياناته في صفحة الدخول، الصفحة بتبعت البيانات لخدمة التحقق، الخدمة بتشيك في قاعدة البيانات، وبترجع رد (Success/Fail).",
+    "scenarioEn": "User enters **credentials**. Login page sends them to **Authentication service**. Service queries the **Database**. Database returns **user data**. Service confirms **success** to the user.",
+    "scenarioAr": "المستخدم بيدخل **بياناته**. صفحة الدخول بتبعتها لـ **خدمة التحقق**. الخدمة بتعمل استعلام في **قاعدة البيانات**. قاعدة البيانات بترجع **بيانات المستخدم**. الخدمة بتأكد **النجاح** للمستخدم.",
     "mermaid": "sequenceDiagram\n    actor User\n    participant LP as Login Page\n    participant AS as Auth Service\n    participant DB as Database\n\n    User->>LP: Enter Username/Password\n    LP->>AS: Send Credentials\n    AS->>DB: Query User\n    DB-->>AS: User Found/Data\n    AS-->>LP: Confirm Login Success\n    LP-->>User: Open Homepage",
-    "highlights": ["Lifeline", "Activation Bar", "Call Message", "Return Message"],
-    "examTricks": [
-      "الخط المنقط تحت كل أوبجكت هو الـ Lifeline.",
-      "الأسهم المتقطعة (--) هي الـ Return Message (الرد).",
-      "الوقت بيمشي من فوق لتحت."
-    ]
+    "examStrategyAr": "الـ Sequence Diagram بيسألك عن **ترتيب الرسائل**. هتعرف الـ **Lifelines** من المكونات اللي في القصة (اليوزر، الصفحة، السيرفر، الداتابيز). السهم اللي رايح جاي ده معناه رسالة ورد (Call and Return). دايما ابدأ من الشمال لليمين ومن فوق لتحت.",
+    "highlights": ["Lifeline", "Call Message", "Return Message"]
   },
   {
     "id": "uc-4",
@@ -49,14 +41,11 @@
     "title": "Company Management System",
     "titleAr": "نظام إدارة الشركة",
     "actors": ["Company", "Department", "Employee", "Project"],
-    "scenarioAr": "الشركة فيها كذا قسم (Composition)، والقسم فيه موظفين (Aggregation)، والموظفين شغالين في مشاريع (Many-to-Many).",
+    "scenarioEn": "A **Company** consists of one or more **Departments** (**Composition**). Departments have **Employees** as members (**Aggregation**). Employees work on **Projects**.",
+    "scenarioAr": "الـ **شركة** بتتكون من **أقسام** (**Composition**). الأقسام فيها **موظفين** (**Aggregation**). الموظفين شغالين في **مشاريع**.",
     "mermaid": "classDiagram\n    Company \"1\" *-- \"1..*\" Department : consists of\n    Department \"1\" o-- \"1..*\" Employee : has\n    Employee \"1..3\" -- \"2..50\" Project : works on\n    \n    class Company {\n        +String name\n        +String address\n    }\n    class Employee {\n        +int empNum\n        +double salary\n    }\n    class Project {\n        +String title\n        +Date deadline\n    }",
-    "highlights": ["Composition (Filled Diamond)", "Aggregation (Hollow Diamond)", "Multiplicity", "Visibility (+)"],
-    "examTricks": [
-      "المعين الأسود (Composition) يعني القسم جزء لا يتجزأ من الشركة.",
-      "المعين الفاضي (Aggregation) يعني الموظف ممكن يسيب القسم ويفضل موجود (علاقة ضعيفة).",
-      "الـ Multiplicity (1..*) يعني واحد أو أكتر."
-    ]
+    "examStrategyAr": "في الـ Class Diagram، أهم حاجة العلاقات. لو قالك 'Consists of' وحاجة متبقاش موجودة لو الكبيرة اتمسحت، دي **Composition** (معين أسود). لو قالك 'Has' والحاجة ممكن تعيش لوحدها، دي **Aggregation** (معين فاضي). والـ **Multiplicity** بتعرفها من الأرقام (One or more تعني 1..*).",
+    "highlights": ["Composition", "Aggregation", "Multiplicity"]
   },
   {
     "id": "uc-5",
@@ -64,13 +53,11 @@
     "title": "Hockey League",
     "titleAr": "رابطة هوكي (مثال وراثة)",
     "actors": ["People", "Player", "Coach", "Team", "Game"],
-    "scenarioAr": "اللاعب والمدرب هما أصلاً 'بشر' (Inheritance)، الفريق فيه لاعيبة، والفرق بتلعب ضد بعضها في ماتشات.",
-    "mermaid": "classDiagram\n    Person <|-- Player\n    Person <|-- Coach\n    Team \"1\" *-- \"6..12\" Player\n    Coach \"1\" -- \"1..*\" Team : trains\n    Team \"2\" -- \"*\" Game : plays in\n    \n    class Person {\n        +String name\n        +String address\n    }\n    class Player {\n        +int number\n        +String position\n    }\n    class Coach {\n        +int experienceYears\n    }\n    class Game {\n        +int score\n        +String location\n    }",
-    "highlights": ["Generalization (Inheritance)", "Multiplicity", "Association"],
-    "examTricks": [
-      "السهم اللي آخره مثلث فاضي هو الـ Inheritance (الوراثة).",
-      "الـ Person هو الـ Superclass والـ Player هو الـ Subclass."
-    ]
+    "scenarioEn": "Players and Coaches are **People**. A **Team** has many players (**Composition**). Coach trains multiple teams.",
+    "scenarioAr": "اللاعبين والمدربين هما أصلاً **أشخاص**. الـ **فريق** بيتكون من مجموعة لاعبين (**Composition**). المدرب بيدرب كذا فريق.",
+    "mermaid": "classDiagram\n    Person <|-- Player\n    Person <|-- Coach\n    Team \"1\" *-- \"6..12\" Player\n    Coach \"1\" -- \"1..*\" Team : trains\n    Team \"2\" -- \"*\" Game : plays in\n    \n    class Person {\n        +String name\n        +String address\n    }\n    class Player {\n        +int number\n        +String position\n    }",
+    "examStrategyAr": "لما تلاقي 'is-a' أو نوع من (Kind of)، دي **Inheritance/Generalization** (سهم بمثلث فاضي). خد بالك إن الـ Person هو الأب (Superclass) اللي فيه الصفات المشتركة زي الاسم والعنوان.",
+    "highlights": ["Generalization", "Inheritance", "Superclass"]
   },
   {
     "id": "uc-6",
@@ -78,40 +65,34 @@
     "title": "Bus Ticket Reservation",
     "titleAr": "حجز تذاكر الأتوبيس",
     "actors": ["Passenger", "System"],
-    "scenarioAr": "المسافر بيسجل دخول، يدور على أتوبيس، يختار الكرسي، السيستم يحسب السعر ويطلب الدفع. لو الدفع نجح التذكرة بتطلع، لو فشل بيطلب منه يحاول تاني.",
-    "mermaid": "stateDiagram-v2\n    [*] --> Login\n    Login --> SearchBuses\n    SearchBuses --> SelectSeat\n    SelectSeat --> CalculateFare\n    CalculateFare --> Payment\n    Payment --> PaymentSuccessful?: [Check]\n    PaymentSuccessful? --> ConfirmTicket: Yes\n    PaymentSuccessful? --> Payment: No (Retry)\n    ConfirmTicket --> [*]",
-    "highlights": ["Loop (Retry)", "Decision Node", "Process Flow"],
-    "examTricks": [
-      "لاحظ إن فيه 'Loop' في حالة فشل الدفع.",
-      "نقطة البداية والنهاية أساسية في أي Activity Diagram."
-    ]
+    "scenarioEn": "Passenger logs in and **searches** for buses. Selects a **seat**. System calculates **fare** and asks for **payment**. If payment **fails**, user is asked to **retry**. Ends when booked or **cancelled**.",
+    "scenarioAr": "المسافر بيدخل و**يدور** على أتوبيس. بيختار **الكرسي**. السيستم بيحسب **السعر** ويطلب **الدفع**. لو الدفع **فشل**، بيطلب منه **يحاول تاني**. بتنتهي لما يحجز أو **يلغي**.",
+    "mermaid": "stateDiagram-v2\n    [*] --> Login\n    Login --> SearchBuses\n    SearchBuses --> SelectSeat\n    SelectSeat --> CalculateFare\n    CalculateFare --> Payment\n    state PaymentSuccessful <<choice>>\n    Payment --> PaymentSuccessful : [Check]\n    PaymentSuccessful --> ConfirmTicket: Yes\n    PaymentSuccessful --> Payment: No (Retry)\n    ConfirmTicket --> [*]",
+    "examStrategyAr": "هنا فيه **Loop** (تكرار). لما تلاقي في المسألة إن فيه خطوة بتتعاد لو حاجة باظت (Retry)، لازم ترسم سهم راجع لورا. الـ Choice هو المعين اللي بيفصل بين 'نجح' و 'فشل'.",
+    "highlights": ["Retry Loop", "Choice", "Process Flow"]
   },
   {
     "id": "uc-7",
     "category": "Sequence Diagram",
-    "title": "Chapter.com Book Purchase",
+    "title": "Book Purchase (Chapter.com)",
     "titleAr": "شراء كتاب (Chapter.com)",
-    "actors": ["Customer", "System", "Bank", "Orders Dept"],
-    "scenarioAr": "العميل بيختار كتاب، يدخل الكريدت كارد، السيستم بيكلم البنك، لو البنك وافق بيبعت لقسم الطلبات يجهزوا الشحنة لما تتوفر.",
-    "mermaid": "sequenceDiagram\n    actor C as Customer\n    participant S as System\n    participant B as Bank\n    participant OD as Orders Dept\n\n    C->>S: Select Book\n    C->>S: Provide Credit Card\n    S->>B: Request Authorization\n    B-->>S: Auth OK\n    S-->>C: Confirm Sale\n    S->>OD: Send Order\n    OD->>OD: Check Availability\n    Note over OD: If available\n    OD-->>C: Ship Book\n    OD->>B: Charge Card",
-    "highlights": ["Asynchronous Messages", "Internal Processing", "Multiple Actors"],
-    "examTricks": [
-      "الـ Bank والـ Orders Dept هما أطراف خارجية بتشارك في العملية.",
-      "شحن الكتاب بيعتمد على توفره (Availability)."
-    ]
+    "actors": ["Customer", "Bank", "Orders Dept"],
+    "scenarioEn": "Customer selects **book**. Provides **credit card**. System gets **authorization** from Bank. If **positive**, confirms sale. Orders dept **ships** when available and **charges** card.",
+    "scenarioAr": "العميل بيختار **كتاب**. بيدخل بيانات الـ **فيزا**. السيستم بياخد **موافقة** من البنك. لو **موافق**، بيأكد البيع. قسم الطلبات **بيشحن** لما يتوفر و**بيسحب** الفلوس.",
+    "mermaid": "sequenceDiagram\n    actor C as Customer\n    participant S as System\n    participant B as Bank\n    participant OD as Orders Dept\n\n    C->>S: Select Book\n    C->>S: Provide Credit Card\n    S->>B: Request Authorization\n    B-->>S: Auth OK\n    S-->>C: Confirm Sale\n    S->>OD: Send Order\n    Note over OD: If available\n    OD-->>C: Ship Book\n    OD->>B: Charge Card",
+    "examStrategyAr": "دي مسألة **تفاعل بين أنظمة**. الـ System والـ Bank والـ Orders Dept هما الـ **Participants**. الترتيب مهم جداً: مينفعش تشحن (Ship) غير لما تاخد موافقة (Authorization) الأول. السهم المنقط هو الرد (Async response).",
+    "highlights": ["Authorization", "Order Priority", "Async Reply"]
   },
   {
     "id": "uc-8",
-    "category": "Sequence Diagram",
-    "title": "Voter Registration",
-    "titleAr": "تسجيل الناخبين",
-    "actors": ["Voter", "Registrar", "Police", "Database"],
-    "scenarioAr": "المواطن بيشوف لو اسمه موجود، لو لأ بيطلب استمارة، بيكلم الشرطة عشان السجل الجنائي، بيبعت الورق للموظف يسجله في الداتا بيز.",
-    "mermaid": "sequenceDiagram\n    actor V as Voter\n    participant R as Registrar\n    participant P as Police\n    participant DB as Database\n\n    V->>DB: Check Registration\n    DB-->>V: Not Listed\n    V->>R: Request Form\n    R-->>V: Application Form\n    V->>P: Request Police Record\n    P-->>V: Police Record\n    V->>R: Submit Form + Record\n    R->>R: Check Form\n    R->>DB: Enter Details\n    DB-->>R: Save OK\n    R-->>V: Acknowledgment",
-    "highlights": ["External Interaction", "Sequence of Events", "Database Query"],
-    "examTricks": [
-      "المسؤول عن تسجيل البيانات هو الـ Registrar مش المواطن نفسه.",
-      "لازم الشرطة ترد الأول بالسجل الجنائي قبل التقديم."
-    ]
+    "category": "Use Case Diagram",
+    "title": "Online E-commerce Roles",
+    "titleAr": "أدوار التجارة الإلكترونية",
+    "actors": ["Customer", "Admin", "Payment System"],
+    "scenarioEn": "Customer can **search items**, **select product**, **place order**, **fill form**, and **provide feedback**. Admin **manages accounts**.",
+    "scenarioAr": "العميل بيقدر **يدور على منتجات**، **يختار منتج**، **يطلب أوردر**، **يملأ استمارة**، و**يقيم الخدمة**. الأدمن **بيدير الحسابات**.",
+    "mermaid": "graph LR\n    Customer((Customer)) --> Search[Search Items]\n    Customer --> Select[Select Product]\n    Customer --> Order[Place Order]\n    Customer --> Form[Fill Payment Form]\n    Customer --> Feedback[Rate System]\n    Admin((Admin)) --> Manage[Manage User Accounts]\n    Form -.-> |include| Pay[Make Payment]\n    Order -.-> |extend| Feedback\n    Pay --- PS[Payment System]",
+    "examStrategyAr": "الـ Use Case Diagram بيعرفك 'مين بيعمل إيه'. الـ **Customer** و الـ **Admin** هما الـ **Actors**. العلاقات مهمة: الـ **Include** يعني إجباري (لازم تدفع عشان تطلب)، والـ **Extend** يعني اختياري (ممكن تقيم السيستم أو لأ).",
+    "highlights": ["Actors", "Include Relationship", "Extend Relationship"]
   }
 ]
