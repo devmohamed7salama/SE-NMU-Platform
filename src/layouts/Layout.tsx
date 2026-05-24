@@ -26,10 +26,10 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar bg="white" expand="lg" className="shadow-sm sticky-top py-3">
         <Container>
           <Navbar.Brand as={Link} to="/" className="text-primary d-flex align-items-center">
-            <span className="bg-primary text-white p-2 rounded-3 ms-2 d-flex">
+            <span className="ms-2">NMU SE</span>
+            <span className="bg-primary text-white p-2 rounded-3 d-flex">
                <BookOpen size={24} />
             </span>
-            <span>NMU SE</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

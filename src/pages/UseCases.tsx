@@ -28,18 +28,13 @@ const UseCases = () => {
       {useCasesData.map(uc => (
         <Card key={uc.id} className="mb-5 border-0 shadow-sm rounded-4 overflow-hidden">
           <Card.Header className="bg-white p-4 border-bottom d-flex justify-content-between align-items-center">
-            <div>
-              <div className="d-flex align-items-center mb-1">
-                <Badge bg="primary" className="ms-2 px-2 py-1 small">
-                  {uc.category === 'Activity Diagram' ? 'نشاط (Activity)' : 
-                   uc.category === 'Class Diagram' ? 'فئات (Class)' : 
-                   uc.category === 'Sequence Diagram' ? 'تسلسل (Sequence)' : 'حالة استخدام (Use Case)'}
-                </Badge>
-                <h3 className="mb-0 fw-bold text-dark">{uc.titleAr}</h3>
-              </div>
-              <div className="text-muted text-english small">
-                {uc.category} Diagram: {uc.title}
-              </div>
+            <div className="d-flex align-items-center flex-wrap">
+              <h3 className="mb-0 fw-bold text-dark">{uc.title}</h3>
+              <Badge bg="primary" className="me-3 px-2 py-1 small shadow-sm">
+                {uc.category === 'Activity Diagram' ? 'نشاط (Activity)' : 
+                 uc.category === 'Class Diagram' ? 'فئات (Class)' : 
+                 uc.category === 'Sequence Diagram' ? 'تسلسل (Sequence)' : 'حالة استخدام (Use Case)'}
+              </Badge>
             </div>
           </Card.Header>
           <Card.Body className="p-4">

@@ -1,14 +1,15 @@
 import { Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Layers, Play, CheckSquare, Zap, Moon } from 'lucide-react';
+import { Layers, Play, CheckSquare, Zap, Moon, GitBranch } from 'lucide-react';
 
 const Home = () => {
   const features = [
     { title: 'المحاضرات', icon: <Layers size={40} />, path: '/lectures', desc: 'شرح مبسط للمحاضرات باللغتين العربية والإنجليزية', color: 'primary' },
-    { title: 'حالات الاستخدام', icon: <Play size={40} />, path: '/use-cases', desc: 'تحليل دقيق لرسومات حالات الاستخدام (Use Cases)', color: 'success' },
+    { title: 'منهجيات التطوير', icon: <GitBranch size={40} />, path: '/methodologies', desc: 'مقارنة بين Waterfall و Agile و Spiral وغيرها من النماذج', color: 'info' },
+    { title: 'الرسومات والـ Use Cases', icon: <Play size={40} />, path: '/use-cases', desc: 'تحليل دقيق لكافة رسومات المنهج واستراتيجيات حلها', color: 'success' },
     { title: 'بنك الأسئلة', icon: <CheckSquare size={40} />, path: '/exam-prep', desc: 'تدرب على أسئلة الامتحان مع الشرح التفصيلي للإجابات', color: 'danger' },
     { title: 'البطاقات الذكية', icon: <Zap size={40} />, path: '/flashcards', desc: 'مراجعة سريعة للمصطلحات باستخدام الفلاش كاردز', color: 'warning' },
-    { title: 'ليلة الامتحان', icon: <Moon size={40} />, path: '/night-before-exam', desc: 'خلاصة المنهج وتجميعة أهم التركات المتوقعة', color: 'info' }
+    { title: 'ليلة الامتحان', icon: <Moon size={40} />, path: '/night-before-exam', desc: 'خلاصة المنهج وتجميعة أهم التركات المتوقعة', color: 'dark' }
   ];
 
   return (
