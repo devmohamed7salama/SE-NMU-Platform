@@ -1,0 +1,102 @@
+[
+  {
+    "id": "q1",
+    "type": "MCQ",
+    "questionEn": "Which software process model assumes requirements are frozen and has no early feedback?",
+    "questionAr": "أي نموذج تطوير يفترض أن المتطلبات ثابتة ولا يوجد فيه تقييم مبكر من العميل؟",
+    "options": ["Waterfall", "Agile", "Spiral", "Iterative"],
+    "correctAnswer": 0,
+    "explanationAr": "الـ Waterfall بيمشي في خط مستقيم (Linear)، كل مرحلة بتخلص بالكامل قبل اللي بعدها، ومفيش فرصة تاخد رأي العميل غير في الآخر خالص.",
+    "keywords": ["frozen requirements", "no early feedback", "linear"]
+  },
+  {
+    "id": "q2",
+    "type": "MCQ",
+    "questionEn": "In a UML Class diagram, what does a filled (black) diamond represent?",
+    "questionAr": "في مخطط الفئات (Class Diagram)، ماذا يمثل المعين المظلل باللون الأسود؟",
+    "options": ["Association", "Aggregation", "Composition", "Generalization"],
+    "correctAnswer": 2,
+    "explanationAr": "المعين الأسود (Filled diamond) بيمثل الـ Composition، ودي علاقة قوية جداً (جزء من كل)، زي الفندق والغرف. لو الفندق اتهد، الغرف هتنتهي. المعين الفاضي (Hollow) بيمثل الـ Aggregation.",
+    "keywords": ["filled diamond", "strong relationship", "Composition"]
+  },
+  {
+    "id": "q3",
+    "type": "TrueFalse",
+    "questionEn": "DevOps is considered a software process model.",
+    "questionAr": "الـ DevOps يُعتبر نموذجاً لعملية تطوير البرمجيات (Software Process Model).",
+    "options": ["True", "False"],
+    "correctAnswer": 1,
+    "explanationAr": "خطأ. الـ DevOps مش Process Model، هو ثقافة (Culture) ونهج إدارة (Management approach) بيربط بين التطوير (Development) والتشغيل (Operations).",
+    "keywords": ["DevOps", "not a process model", "culture"]
+  },
+  {
+    "id": "q4",
+    "type": "Scenario",
+    "questionEn": "A customer wants an e-commerce website. The requirements are poorly understood and likely to change. Which model should you use?",
+    "questionAr": "عميل عايز موقع تجارة إلكترونية، بس المتطلبات مش واضحة وغالباً هتتغير كتير. إيه أفضل نموذج نستخدمه؟",
+    "options": ["Waterfall", "Agile/Iterative", "Component-Based (CBSE)", "V-Model"],
+    "correctAnswer": 1,
+    "explanationAr": "الـ Agile أو الـ Iterative هما الأفضل هنا، لإنهم مرنين وبيتقبلوا التغييرات (Changing requirements) وبيسمحوا للعميل يشوف أجزاء شغالة بدري (Early delivery).",
+    "keywords": ["poorly understood", "likely to change", "Agile"]
+  },
+  {
+    "id": "q5",
+    "type": "MCQ",
+    "questionEn": "What is the outcome of high-quality software engineering according to the course?",
+    "questionAr": "ما هي النتيجة النهائية لهندسة البرمجيات عالية الجودة حسب المقرر؟",
+    "options": ["Fastest code only", "Efficient, maintainable, and reliable product", "Cheapest development cost", "Complex algorithms"],
+    "correctAnswer": 1,
+    "explanationAr": "الهدف الأساسي هو إنتاج سوفت وير يكون Efficient (فعال)، Maintainable (سهل الصيانة)، و Reliable (موثوق).",
+    "keywords": ["outcome", "Efficient", "Maintainable", "Reliable"]
+  },
+  {
+    "id": "q6",
+    "type": "MCQ",
+    "questionEn": "In the Spiral model, what is the key activity performed in each loop?",
+    "questionAr": "في النموذج الحلزوني (Spiral Model)، ما هو النشاط الجوهري الذي يتم في كل لفة؟",
+    "options": ["Coding", "Risk Analysis", "Marketing", "Documentation"],
+    "correctAnswer": 1,
+    "explanationAr": "الـ Spiral Model هو 'Risk-driven'، يعني كل لفة لازم تبدأ وتتمحور حول تحليل المخاطر (Risk Analysis).",
+    "keywords": ["Spiral", "Risk Analysis"]
+  },
+  {
+    "id": "q7",
+    "type": "TrueFalse",
+    "questionEn": "Non-functional requirements specify what the system should do.",
+    "questionAr": "المتطلبات غير الوظيفية (Non-functional) بتحدد 'إيه' اللي السيستم لازم يعمله.",
+    "options": ["True", "False"],
+    "correctAnswer": 1,
+    "explanationAr": "خطأ. اللي بيحدد السيستم بيعمل 'إيه' (WHAT) هي الـ Functional. أما الـ Non-functional بتحدد السيستم بيشتغل 'إزاي' (HOW) زي السرعة والأمان.",
+    "keywords": ["Non-functional", "what vs how"]
+  },
+  {
+    "id": "q8",
+    "type": "MCQ",
+    "questionEn": "In a UML sequence diagram, what does an 'X' mark at the end of a lifeline represent?",
+    "questionAr": "في مخطط التسلسل (Sequence Diagram)، علامة الـ 'X' في آخر الـ lifeline بتمثل إيه؟",
+    "options": ["Error", "End of message", "Destroy Message / Object termination", "Wait for reply"],
+    "correctAnswer": 2,
+    "explanationAr": "علامة الـ 'X' بتعني الـ Destroy Message، يعني الأوبجكت ده حياته خلصت (Object termination).",
+    "keywords": ["X mark", "Destroy", "termination"]
+  },
+  {
+    "id": "q9",
+    "type": "MCQ",
+    "questionEn": "Which of these is a characteristic of the CBSE (Component-Based) model?",
+    "questionAr": "إيه من دول من مميزات الـ CBSE (التطوير القائم على المكونات)؟",
+    "options": ["Developing everything from scratch", "Assembling existing reusable components", "High risk of failure", "Minimal use of documentation"],
+    "correctAnswer": 1,
+    "explanationAr": "الـ CBSE بيعتمد على تجميع مكونات جاهزة (Assembling reusable components) بدل بناء كل حاجة من الأول.",
+    "keywords": ["CBSE", "Reusable components"]
+  },
+  {
+    "id": "q10",
+    "type": "MCQ",
+    "questionEn": "What is the goal of High Cohesion in software design?",
+    "questionAr": "إيه هو الهدف من الـ High Cohesion في تصميم البرمجيات؟",
+    "options": ["Make modules dependent on each other", "Make elements inside a module work together for a single purpose", "Reduce the size of the database", "Increase the number of actors"],
+    "correctAnswer": 1,
+    "explanationAr": "الـ High Cohesion يعني إن كل حاجة جوه الموديول الواحد شغالة مع بعض عشان وظيفة واحدة محددة، وده بيخلي الكود أحسن.",
+    "keywords": ["High Cohesion", "Single purpose"]
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "en": "SDLC",
+    "ar": "دورة حياة تطوير البرمجيات",
+    "description": "Software Development Life Cycle. The process of planning, creating, testing, and deploying an information system."
+  },
+  {
+    "en": "Agile",
+    "ar": "أجايل (التطوير المرن)",
+    "description": "A flexible, iterative approach to software development focused on quick delivery and adapting to change."
+  },
+  {
+    "en": "UML",
+    "ar": "لغة النمذجة الموحدة",
+    "description": "Unified Modeling Language. Standard visual language used to represent and design systems."
+  },
+  {
+    "en": "Cohesion",
+    "ar": "الترابط",
+    "description": "How closely related and focused the responsibilities of a single module are. (High cohesion is good)."
+  },
+  {
+    "en": "Coupling",
+    "ar": "الاعتمادية",
+    "description": "The degree of interdependence between software modules. (Low coupling is good)."
+  },
+  {
+    "en": "Actor",
+    "ar": "المُمثل / المستخدم",
+    "description": "An external entity (person or system) that interacts with the system."
+  },
+  {
+    "en": "Aggregation",
+    "ar": "تجميع (علاقة ضعيفة)",
+    "description": "A 'has-a' relationship where the child can exist independently of the parent. (Hollow diamond)."
+  },
+  {
+    "en": "Composition",
+    "ar": "تكوين (علاقة قوية)",
+    "description": "A 'part-of' relationship where the child cannot exist independently of the parent. (Filled diamond)."
+  },
+  {
+    "en": "V&V",
+    "ar": "التحقق والتحقق من الصحة",
+    "description": "Verification (building the product right) and Validation (building the right product)."
+  },
+  {
+    "en": "SRS",
+    "ar": "مستند مواصفات المتطلبات",
+    "description": "Software Requirements Specification. A formal document that describes in detail the requirements of a system."
+  },
+  {
+    "en": "COTS",
+    "ar": "البرمجيات الجاهزة",
+    "description": "Commercial Off-The-Shelf. Ready-made software available for purchase and use."
+  },
+  {
+    "en": "Fork/Join",
+    "ar": "التفريع والتجميع",
+    "description": "Used in Activity Diagrams to split a single flow into multiple parallel flows and re-combine them."
+  },
+  {
+    "en": "Abstraction",
+    "ar": "التجريد",
+    "description": "Focusing on essential features while ignoring unnecessary details."
+  },
+  {
+    "en": "Feasibility Study",
+    "ar": "دراسة الجدوى",
+    "description": "A study to decide whether or not the proposed system is worthwhile."
+  }
+]

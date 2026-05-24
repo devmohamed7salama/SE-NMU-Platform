@@ -1,0 +1,72 @@
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  border-radius: 16px;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(45deg, #0d6efd, #0dcaf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-lift {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.keyword-highlight {
+  background-color: rgba(255, 193, 7, 0.3);
+  padding: 0 4px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #b38600;
+}
+
+.rtl-dir {
+  direction: rtl;
+}
+
+.ltr-dir {
+  direction: ltr;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+/* Footer branding */
+.footer-branding {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.text-english {
+  font-family: system-ui, -apple-system, sans-serif;
+}

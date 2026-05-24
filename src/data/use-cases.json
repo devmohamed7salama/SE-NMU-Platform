@@ -1,0 +1,117 @@
+[
+  {
+    "id": "uc-1",
+    "category": "Activity Diagram",
+    "title": "Online Examination System",
+    "titleAr": "نظام الامتحانات الإلكتروني",
+    "actors": ["Student", "System", "Timer"],
+    "scenarioAr": "الطالب بيسجل دخول، لو البيانات صح بيختار الامتحان ويقرا التعليمات. السيستم بيبدأ يعرض الأسئلة ويسجل الإجابات وفي نفس الوقت بيراقب الوقت (تايمر). لما الوقت يخلص أو الطالب يخلص، السيستم بيصحح ويبعت النتيجة.",
+    "mermaid": "stateDiagram-v2\n    [*] --> Login\n    Login --> CorrectCredentials?: [Check]\n    CorrectCredentials? --> Login: No\n    CorrectCredentials? --> SelectExam: Yes\n    SelectExam --> ReadInstructions\n    ReadInstructions --> ExamStarted\n    state ExamStarted {\n        direction LR\n        [*] --> DisplayQuestions\n        DisplayQuestions --> RecordAnswers\n        --\n        [*] --> MonitorTime\n    }\n    ExamStarted --> EvaluateAnswers: [Submit or Timeout]\n    EvaluateAnswers --> DisplayResult\n    DisplayResult --> [*]",
+    "highlights": ["Fork/Join (Parallel)", "Decision Node", "Iteration", "Merge"],
+    "examTricks": [
+      "لاحظ وجود عمليتين شغالين مع بعض (Parallel): مراقبة الوقت وتسجيل الإجابات.",
+      "الـ Decision node هو المعين اللي بنحدد بيه اليوزر نيم صح ولا غلط."
+    ]
+  },
+  {
+    "id": "uc-2",
+    "category": "Activity Diagram",
+    "title": "Process Order (Parallelism)",
+    "titleAr": "عملية معالجة الطلبات (التوازي)",
+    "actors": ["Customer", "System"],
+    "scenarioAr": "لما العميل يطلب أوردر، السيستم بيقسم الشغل لنصين شغالين مع بعض: نص بيجهز الشحنة (Warehouse) ونص بيخلص الفواتير (Billing). لازم النصين يخلصوا عشان الأوردر يتقفل.",
+    "mermaid": "stateDiagram-v2\n    [*] --> ReceivedOrder\n    state fork_state <<fork>>\n    ReceivedOrder --> fork_state\n    fork_state --> FillOrder\n    fork_state --> SendInvoice\n    FillOrder --> OvernightDelivery: [Fast?]\n    FillOrder --> RegularDelivery: [Not Fast?]\n    state join_state <<join>>\n    OvernightDelivery --> join_state\n    RegularDelivery --> join_state\n    SendInvoice --> MakePayment\n    state join_state_final <<join>>\n    join_state --> join_state_final\n    MakePayment --> join_state_final\n    join_state_final --> CloseOrder\n    CloseOrder --> [*]",
+    "highlights": ["Fork", "Join", "Decision", "Merge"],
+    "examTricks": [
+      "الـ Fork بيبدأ بسهم واحد وطالع منه سهمين.",
+      "الـ Join بياخد كذا سهم ويطلع سهم واحد.",
+      "ممنوع تقفل الأوردر غير لما الـ Billing والـ Warehouse يخلصوا سوا."
+    ]
+  },
+  {
+    "id": "uc-3",
+    "category": "Sequence Diagram",
+    "title": "User Login Process",
+    "titleAr": "عملية تسجيل دخول المستخدم",
+    "actors": ["User", "Login Page", "Auth Service", "Database"],
+    "scenarioAr": "اليوزر بيدخل بياناته في صفحة الدخول، الصفحة بتبعت البيانات لخدمة التحقق، الخدمة بتشيك في قاعدة البيانات، وبترجع رد (Success/Fail).",
+    "mermaid": "sequenceDiagram\n    actor User\n    participant LP as Login Page\n    participant AS as Auth Service\n    participant DB as Database\n\n    User->>LP: Enter Username/Password\n    LP->>AS: Send Credentials\n    AS->>DB: Query User\n    DB-->>AS: User Found/Data\n    AS-->>LP: Confirm Login Success\n    LP-->>User: Open Homepage",
+    "highlights": ["Lifeline", "Activation Bar", "Call Message", "Return Message"],
+    "examTricks": [
+      "الخط المنقط تحت كل أوبجكت هو الـ Lifeline.",
+      "الأسهم المتقطعة (--) هي الـ Return Message (الرد).",
+      "الوقت بيمشي من فوق لتحت."
+    ]
+  },
+  {
+    "id": "uc-4",
+    "category": "Class Diagram",
+    "title": "Company Management System",
+    "titleAr": "نظام إدارة الشركة",
+    "actors": ["Company", "Department", "Employee", "Project"],
+    "scenarioAr": "الشركة فيها كذا قسم (Composition)، والقسم فيه موظفين (Aggregation)، والموظفين شغالين في مشاريع (Many-to-Many).",
+    "mermaid": "classDiagram\n    Company \"1\" *-- \"1..*\" Department : consists of\n    Department \"1\" o-- \"1..*\" Employee : has\n    Employee \"1..3\" -- \"2..50\" Project : works on\n    \n    class Company {\n        +String name\n        +String address\n    }\n    class Employee {\n        +int empNum\n        +double salary\n    }\n    class Project {\n        +String title\n        +Date deadline\n    }",
+    "highlights": ["Composition (Filled Diamond)", "Aggregation (Hollow Diamond)", "Multiplicity", "Visibility (+)"],
+    "examTricks": [
+      "المعين الأسود (Composition) يعني القسم جزء لا يتجزأ من الشركة.",
+      "المعين الفاضي (Aggregation) يعني الموظف ممكن يسيب القسم ويفضل موجود (علاقة ضعيفة).",
+      "الـ Multiplicity (1..*) يعني واحد أو أكتر."
+    ]
+  },
+  {
+    "id": "uc-5",
+    "category": "Class Diagram",
+    "title": "Hockey League",
+    "titleAr": "رابطة هوكي (مثال وراثة)",
+    "actors": ["People", "Player", "Coach", "Team", "Game"],
+    "scenarioAr": "اللاعب والمدرب هما أصلاً 'بشر' (Inheritance)، الفريق فيه لاعيبة، والفرق بتلعب ضد بعضها في ماتشات.",
+    "mermaid": "classDiagram\n    Person <|-- Player\n    Person <|-- Coach\n    Team \"1\" *-- \"6..12\" Player\n    Coach \"1\" -- \"1..*\" Team : trains\n    Team \"2\" -- \"*\" Game : plays in\n    \n    class Person {\n        +String name\n        +String address\n    }\n    class Player {\n        +int number\n        +String position\n    }\n    class Coach {\n        +int experienceYears\n    }\n    class Game {\n        +int score\n        +String location\n    }",
+    "highlights": ["Generalization (Inheritance)", "Multiplicity", "Association"],
+    "examTricks": [
+      "السهم اللي آخره مثلث فاضي هو الـ Inheritance (الوراثة).",
+      "الـ Person هو الـ Superclass والـ Player هو الـ Subclass."
+    ]
+  },
+  {
+    "id": "uc-6",
+    "category": "Activity Diagram",
+    "title": "Bus Ticket Reservation",
+    "titleAr": "حجز تذاكر الأتوبيس",
+    "actors": ["Passenger", "System"],
+    "scenarioAr": "المسافر بيسجل دخول، يدور على أتوبيس، يختار الكرسي، السيستم يحسب السعر ويطلب الدفع. لو الدفع نجح التذكرة بتطلع، لو فشل بيطلب منه يحاول تاني.",
+    "mermaid": "stateDiagram-v2\n    [*] --> Login\n    Login --> SearchBuses\n    SearchBuses --> SelectSeat\n    SelectSeat --> CalculateFare\n    CalculateFare --> Payment\n    Payment --> PaymentSuccessful?: [Check]\n    PaymentSuccessful? --> ConfirmTicket: Yes\n    PaymentSuccessful? --> Payment: No (Retry)\n    ConfirmTicket --> [*]",
+    "highlights": ["Loop (Retry)", "Decision Node", "Process Flow"],
+    "examTricks": [
+      "لاحظ إن فيه 'Loop' في حالة فشل الدفع.",
+      "نقطة البداية والنهاية أساسية في أي Activity Diagram."
+    ]
+  },
+  {
+    "id": "uc-7",
+    "category": "Sequence Diagram",
+    "title": "Chapter.com Book Purchase",
+    "titleAr": "شراء كتاب (Chapter.com)",
+    "actors": ["Customer", "System", "Bank", "Orders Dept"],
+    "scenarioAr": "العميل بيختار كتاب، يدخل الكريدت كارد، السيستم بيكلم البنك، لو البنك وافق بيبعت لقسم الطلبات يجهزوا الشحنة لما تتوفر.",
+    "mermaid": "sequenceDiagram\n    actor C as Customer\n    participant S as System\n    participant B as Bank\n    participant OD as Orders Dept\n\n    C->>S: Select Book\n    C->>S: Provide Credit Card\n    S->>B: Request Authorization\n    B-->>S: Auth OK\n    S-->>C: Confirm Sale\n    S->>OD: Send Order\n    OD->>OD: Check Availability\n    Note over OD: If available\n    OD-->>C: Ship Book\n    OD->>B: Charge Card",
+    "highlights": ["Asynchronous Messages", "Internal Processing", "Multiple Actors"],
+    "examTricks": [
+      "الـ Bank والـ Orders Dept هما أطراف خارجية بتشارك في العملية.",
+      "شحن الكتاب بيعتمد على توفره (Availability)."
+    ]
+  },
+  {
+    "id": "uc-8",
+    "category": "Sequence Diagram",
+    "title": "Voter Registration",
+    "titleAr": "تسجيل الناخبين",
+    "actors": ["Voter", "Registrar", "Police", "Database"],
+    "scenarioAr": "المواطن بيشوف لو اسمه موجود، لو لأ بيطلب استمارة، بيكلم الشرطة عشان السجل الجنائي، بيبعت الورق للموظف يسجله في الداتا بيز.",
+    "mermaid": "sequenceDiagram\n    actor V as Voter\n    participant R as Registrar\n    participant P as Police\n    participant DB as Database\n\n    V->>DB: Check Registration\n    DB-->>V: Not Listed\n    V->>R: Request Form\n    R-->>V: Application Form\n    V->>P: Request Police Record\n    P-->>V: Police Record\n    V->>R: Submit Form + Record\n    R->>R: Check Form\n    R->>DB: Enter Details\n    DB-->>R: Save OK\n    R-->>V: Acknowledgment",
+    "highlights": ["External Interaction", "Sequence of Events", "Database Query"],
+    "examTricks": [
+      "المسؤول عن تسجيل البيانات هو الـ Registrar مش المواطن نفسه.",
+      "لازم الشرطة ترد الأول بالسجل الجنائي قبل التقديم."
+    ]
+  }
+]

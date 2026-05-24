@@ -1,0 +1,426 @@
+[
+  {
+    "id": "lec-1",
+    "title": "Introduction to Software Engineering (CSE251)",
+    "titleAr": "مقدمة في هندسة البرمجيات (المحاضرة ١)",
+    "description": "Fundamental principles, course objectives, syllabus, and assessment strategy.",
+    "descriptionAr": "المبادئ الأساسية، أهداف المقرر، المنهج، واستراتيجية التقييم.",
+    "topics": [
+      {
+        "id": "t1-1",
+        "title": "Course Description",
+        "titleAr": "وصف المقرر",
+        "contentEn": "Fundamental principles for design, development, and construction of reliable, maintainable, and efficient software systems. Covers the complete software life cycle: requirements, design, implementation, V&V, documentation, and maintenance. Explores modular and object-oriented design and software reuse.",
+        "contentAr": "المقرر ده بيعلمنا إزاي نصمم ونبني أنظمة برمجية (Software Systems) تكون موثوقة (Reliable) وسهلة الصيانة (Maintainable) وفعالة (Efficient). هندرس فيه دورة حياة السوفت وير بالكامل: من أول تحديد الاحتياجات (Requirements) لحد الصيانة (Maintenance)، وهنركز على التصميم الموديولار (Modular) والـ Object-Oriented وإعادة استخدام البرمجيات (Software Reuse).",
+        "whyItMatters": "ده الأساس اللي بيفرق بين 'مبرمج' بيكتب كود وخلاص، وبين 'مهندس برمجيات' بيبني أنظمة ضخمة بتعيش سنين.",
+        "keywords": ["Reliable", "Maintainable", "Efficient", "Life Cycle"]
+      },
+      {
+        "id": "t1-2",
+        "title": "Course Objectives",
+        "titleAr": "أهداف المقرر",
+        "contentEn": "Understand core principles, evaluate life cycle phases, analyze requirements using models, apply OOD techniques, perform V&V, and understand project organization.",
+        "contentAr": "بنهاية المقرر لازم تكون بتعرف:\n١. تفهم وتطبق مبادئ هندسة البرمجيات.\n٢. تقيم مراحل دورة الحياة (SDLC).\n٣. تحلل وتوثق المتطلبات باستخدام الـ Models.\n٤. تصمم أنظمة منظمة باستخدام الـ OOP.\n٥. تعمل اختبارات (Verification & Validation) عشان تتأكد من الجودة.\n٦. تفهم إزاي تدير مشاريع السوفت وير (Project Organization).",
+        "examTrick": "ركز على الـ V&V (Verification and Validation) لإنها نقطة جوهرية في الامتحان.",
+        "keywords": ["V&V", "SDLC", "Models", "OOD"]
+      },
+      {
+        "id": "t1-3",
+        "title": "Grade Distribution & Question Types",
+        "titleAr": "توزيع الدرجات وأنواع الأسئلة",
+        "contentEn": "Assessment: Project (20%), Midterm (20%), Quizzes (10%), Assignments (10%), Final (40%). Question types: MCQ (70%), Essay (5-10%), Case Study (25-30%).",
+        "contentAr": "توزيع الدرجات:\n- المشروع (Project): ٢٠٪\n- الميدترم (Midterm): ٢٠٪\n- الكويزات: ١٠٪\n- التكليفات (Assignments): ١٠٪\n- الفاينال: ٤٠٪\nنوع الأسئلة في الامتحان:\n- الأسئلة الاختيارية (MCQ) هي الأغلبية (٧٠٪).\n- المقالي (Essay) درجته قليلة (٥-١٠٪).\n- دراسة الحالة (Case Study) مهمة جداً (٢٥-٣٠٪).",
+        "examTrick": "الـ Case Study هي اللي بتحدد مين فاهم ومين حافظ، لازم تتدرب عليها كويس.",
+        "keywords": ["MCQ", "Case Study", "Assessment"]
+      }
+    ]
+  },
+  {
+    "id": "lec-2",
+    "title": "Software Failures & Core Concepts",
+    "titleAr": "فشل البرمجيات والمفاهيم الأساسية (المحاضرة ٢)",
+    "description": "Historical failures, Program vs Software, Types of software, and Attributes of good software.",
+    "descriptionAr": "أمثلة تاريخية على فشل البرمجيات، الفرق بين البرنامج والبرمجيات، أنواع السوفت وير، وخصائص السوفت وير الجيد.",
+    "topics": [
+      {
+        "id": "t2-1",
+        "title": "Examples of Software Failure",
+        "titleAr": "أمثلة على فشل البرمجيات",
+        "contentEn": "1. 2009 Computer glitch delays UK flights (Air traffic control). 2. Ariane 5 Explosion: $7 billion project, crashed after 36.7 seconds due to an overflow error (64-bit number into 16-bit space).",
+        "contentAr": "ليه هندسة البرمجيات مهمة؟ عشان الأخطاء الصغيرة ممكن تعمل كوارث:\n١. في ٢٠٠٩، عطل في نظام مراقبة الطيران في بريطانيا أخر مئات الرحلات.\n٢. انفجار صاروخ Ariane 5: مشروع تكلف ٧ مليار دولار وانفجر بعد ٣٦ ثانية بس! السبب كان 'Overflow Error'، المبرمجين حاولوا يخزنوا رقم 64-bit في مساحة 16-bit بس.",
+        "whyItMatters": "مثال Ariane 5 ده أشهر مثال بيوضح أهمية الـ Testing والـ Data Types.",
+        "keywords": ["Glitch", "Ariane 5", "Overflow error", "Cost of failure"]
+      },
+      {
+        "id": "t2-2",
+        "title": "Program vs Software",
+        "titleAr": "الفرق بين البرنامج والبرمجيات",
+        "contentEn": "Software = Programs + Documentation + Operating Procedures. Software is more than just code; it includes user manuals, design docs, and operation rules.",
+        "contentAr": "السوفت وير (Software) مش هو الكود (Program) بس! \nالمعادلة هي: Software = Programs + Documentation + Procedures.\n- الكود: اللي الكمبيوتر بينفذه.\n- التوثيق (Documentation): زي شرح السيستم والـ User Manual.\n- الإجراءات (Procedures): القواعد اللي بتشغل السيستم.",
+        "examTrick": "سؤال دايماً بييجي: هل الـ Software هو الـ Program؟ الإجابة لأ، الـ Software أعم وأشمل.",
+        "keywords": ["Programs", "Documentation", "Procedures"]
+      },
+      {
+        "id": "t2-3",
+        "title": "Essential Attributes of Good Software",
+        "titleAr": "خصائص السوفت وير الجيد (الـ ٤ أركان)",
+        "contentEn": "1. Acceptability (Usable by intended users). 2. Efficiency (No waste of resources). 3. Maintainability (Can evolve). 4. Reliability (Performs intended function without failure).",
+        "contentAr": "عشان نقول السوفت وير ده 'برنس'، لازم يحقق ٤ حاجات:\n١. القبول (Acceptability): اليوزرز اللي معمولة ليهم يحبوه ويفهموه.\n٢. الكفاءة (Efficiency): مياكلش الـ Ram والـ Processor.\n٣. قابلية الصيانة (Maintainability): نقدر نعدله لما الدنيا تتغير.\n٤. الموثوقية (Reliability): يشتغل صح في الظروف اللي اتقال عليها من غير ما يهنج.",
+        "keywords": ["Acceptability", "Efficiency", "Maintainability", "Reliability"]
+      },
+      {
+        "id": "t2-4",
+        "title": "Software Engineering Definition",
+        "titleAr": "تعريف هندسة البرمجيات",
+        "contentEn": "Engineering branch associated with software development using well-defined scientific principles, methods, and procedures. IEEE defines it as a systematic, disciplined, quantifiable approach.",
+        "contentAr": "هي فرع من فروع الهندسة بيهتم ببناء السوفت وير باستخدام أسس علمية وممنهجة. الـ IEEE بتعرفها إنها 'تطبيق نهج منظم ومنضبط وقابل للقياس' في تطوير السوفت وير.",
+        "keywords": ["Systematic", "Disciplined", "Quantifiable", "IEEE"]
+      }
+    ]
+  },
+  {
+    "id": "lec-3",
+    "title": "Software Development Life Cycle (SDLC) - Detailed",
+    "titleAr": "دورة حياة تطوير البرمجيات (المحاضرة ٣)",
+    "description": "Phases of SDLC: Planning, Analysis, Design, Implementation, Testing, and Maintenance.",
+    "descriptionAr": "مراحل الـ SDLC بالتفصيل: التخطيط، التحليل، التصميم، التنفيذ، الاختبار، والصيانة.",
+    "topics": [
+      {
+        "id": "t3-1",
+        "title": "Phase 1: Planning",
+        "titleAr": "المرحلة ١: التخطيط (Planning)",
+        "contentEn": "Determines why the system is needed and if it is feasible. Activities: Business problem identification, Feasibility study, Time/Cost estimation, Risk identification.",
+        "contentAr": "هنا بنجاوب على سؤال: إحنا ليه محتاجين السيستم ده؟ وهل ينفع أصلاً (Feasible)؟\nالأنشطة:\n- تحديد المشكلة أو الفرصة.\n- دراسة الجدوى (Feasibility study).\n- تقدير الوقت والتكلفة.\n- تحديد المخاطر (Risks) وإدارتها.",
+        "keywords": ["Feasibility", "Estimation", "Risk", "Schedule"]
+      },
+      {
+        "id": "t3-2",
+        "title": "Phase 2: Analysis (Software Specification)",
+        "titleAr": "المرحلة ٢: التحليل (Analysis)",
+        "contentEn": "Defining what the system must do and constraints. Goal is understanding and documenting all requirements clearly via elicitation (interviews, questionnaires).",
+        "contentAr": "الهدف إننا نفهم 'إيه' المطلوب من السيستم بالظبط ونكتبه بوضوح. \nالمحلل (Analyst) بيقعد مع العميل ويجمع المتطلبات (Requirements) ويحدد قيود التشغيل (Constraints).",
+        "keywords": ["Specification", "Requirements", "Stakeholders"]
+      },
+      {
+        "id": "t3-3",
+        "title": "Phase 3: Design",
+        "titleAr": "المرحلة ٣: التصميم (Design)",
+        "contentEn": "Determine how the system will be built. Activities: Architecture design, Database design, UI/UX design, Flowcharts.",
+        "contentAr": "هنا بنحدد 'إزاي' السيستم هيتبني. بنرسم الـ Architecture ونحدد شكل قواعد البيانات (Database) وواجهة المستخدم (UI/UX).",
+        "keywords": ["Architecture", "Database", "UI/UX", "Flowchart"]
+      },
+      {
+        "id": "t3-4",
+        "title": "Phase 4: Implementation",
+        "titleAr": "المرحلة ٤: التنفيذ (Implementation)",
+        "contentEn": "Developers produce software meeting design specs. Design is converted into working software by writing and compiling source code.",
+        "contentAr": "دي مرحلة المبرمجين (Developers)، بياخدوا التصميم ويحولوه لكود شغال باستخدام لغات البرمجة المناسبة.",
+        "keywords": ["Coding", "Programming", "Source code"]
+      },
+      {
+        "id": "t3-5",
+        "title": "Phase 5: Testing and Integration",
+        "titleAr": "المرحلة ٥: الاختبار والتكامل (Testing & Integration)",
+        "contentEn": "Combine units into a complete system. Goal: detect errors, verify correctness, validate system performance.",
+        "contentAr": "بنجمع الأجزاء مع بعضها (Integration) ونختبرها عشان نكتشف الأخطاء (Defects) ونتأكد إن السيستم بيعمل اللي العميل عايزه (Validation).",
+        "keywords": ["V&V", "Validation", "Debug", "Defects"]
+      },
+      {
+        "id": "t3-6",
+        "title": "Phase 6: Maintenance (Software Evolution)",
+        "titleAr": "المرحلة ٦: الصيانة (Maintenance)",
+        "contentEn": "Modify and update after deployment to meet changing needs, fix bugs discovered in use, or adapt to new environments.",
+        "contentAr": "أطول مرحلة في عمر السوفت وير. بتبدأ بعد ما العميل يستلم السيستم ويشغله. بنصلح فيها الأخطاء اللي ظهرت فجأة، أو بنضيف ميزات جديدة، أو بنخليه يشتغل على هاردوير جديد.",
+        "keywords": ["Evolution", "Feedback", "Bug fixing"]
+      }
+    ]
+  },
+  {
+    "id": "lec-4",
+    "title": "Reuse-Oriented & Iterative Models",
+    "titleAr": "نماذج إعادة الاستخدام والنماذج التكرارية (المحاضرة ٤)",
+    "description": "Component-Based SE (CBSE) and the Prototyping model.",
+    "descriptionAr": "هندسة البرمجيات القائمة على المكونات (CBSE) ونموذج بناء النماذج الأولية (Prototype).",
+    "topics": [
+      {
+        "id": "t4-1",
+        "title": "Component-Based SE (CBSE)",
+        "titleAr": "التطوير القائم على المكونات (CBSE)",
+        "contentEn": "Systems are built by assembling existing, reusable components (COTS - Commercial Off-The-Shelf). Stages: Spec, Discovery, Evaluation, Refinement, Configuration, Adaptation.",
+        "contentAr": "بدل ما نبدأ من الصفر، بنجمع 'حتت' سوفت وير جاهزة (Components) ونركبها مع بعض. الأجزاء دي بنسميها COTS (يعني حاجات جاهزة بتتباع في السوق).\nالمراحل:\n١. تحديد المتطلبات.\n٢. البحث عن المكونات (Software Discovery).\n٣. تقييم المكونات (هل هتنفعنا؟).\n٤. تعديل المتطلبات عشان تمشي مع المكونات الجاهزة.\n٥. التركيب والدمج.",
+        "examTrick": "ميزتها الأساسية: بتقلل التكلفة والوقت (Reduce cost/time) لإنه 'جاهز'. عيبها: فقدان السيطرة على تطور المكونات دي.",
+        "keywords": ["COTS", "Reuse", "Assembling", "Off-the-shelf"]
+      },
+      {
+        "id": "t4-2",
+        "title": "Iterative Model",
+        "titleAr": "النموذج التكراري (Iterative)",
+        "contentEn": "System is built through repeated cycles (iterations) in smaller portions. Allows early feedback and progressive improvement.",
+        "contentAr": "السيستم بيتبني على دورات (Cycles). بنعمل جزء ونعرضه ونعدل عليه ونكبره المرة اللي بعدها. ده أحسن بكتير لما تكون المتطلبات مش واضحة قوي في الأول.",
+        "keywords": ["Cycles", "Feedback", "Progressive"]
+      },
+      {
+        "id": "t4-3",
+        "title": "Prototyping Model",
+        "titleAr": "نموذج النموذج الأولي (Prototype)",
+        "contentEn": "A preliminary version built to demonstrate core features. Types: Rapid Throwaway (built to explore ideas, then discarded) and Evolutionary (refined based on feedback until it becomes the final system).",
+        "contentAr": "بنعمل 'ماكيت' أو نسخة تجريبية (Mockup) عشان العميل يشوفها. فيه نوعين:\n١. الرمي السريع (Rapid Throwaway): بنعمل نموذج عشان نفهم الفكرة بس وبعدين بنرميه ونبدأ الكود الحقيقي.\n٢. التطوري (Evolutionary): النموذج ده هو اللي بيفضل يكبر ويتعدل لحد ما يبقى هو السيستم النهائي.",
+        "examTrick": "الـ Prototype ميزته العظيمة إن العميل بيشوف حاجة ملموسة (Feel for the system) بدري.",
+        "keywords": ["Mockup", "Throwaway", "Evolutionary"]
+      }
+    ]
+  },
+  {
+    "id": "lec-5",
+    "title": "Incremental, Spiral & Agile Models",
+    "titleAr": "النموذج التزايدي والحلزوني والأجايل (المحاضرة ٥)",
+    "description": "Incremental delivery, Risk-driven Spiral model, Agile Methodology, Scrum, and DevOps.",
+    "descriptionAr": "التسليم التزايدي، النموذج الحلزوني المبني على المخاطر، منهجية الأجايل، السكروم، والـ DevOps.",
+    "topics": [
+      {
+        "id": "t5-1",
+        "title": "Incremental Model",
+        "titleAr": "النموذج التزايدي (Incremental)",
+        "contentEn": "Software is designed, implemented, and delivered in small parts called increments. Highest priority requirements are included in early increments.",
+        "contentAr": "بنقسم السيستم لأجزاء (Increments). بنسلم العميل أكتر حاجات هو محتاجها (High Priority) في أول جزء، وبعدين الأجزاء التانية بتنزل ورا بعضها. \nميزته: العميل بياخد قيمة (Value) من أول يوم.",
+        "keywords": ["Increments", "Priority", "Early delivery"]
+      },
+      {
+        "id": "t5-2",
+        "title": "Spiral Model (Boehm's)",
+        "titleAr": "النموذج الحلزوني (Spiral Model)",
+        "contentEn": "Risk-driven process combining iterative and waterfall. 4 sectors: Objective setting, Risk analysis, Product development, Planning. Each loop is a phase.",
+        "contentAr": "ده نموذج 'مرعب' للمخاطر (Risk-driven). بيمشي في شكل حلزوني وكل لفة بتعدي على ٤ أقسام:\n١. تحديد الأهداف.\n٢. تحليل المخاطر (أهم حتة).\n٣. التطوير والتحقق.\n٤. التخطيط للفة اللي جاية.",
+        "examTrick": "لو شفت كلمة 'Risk Analysis' في السؤال، اختار Spiral Model وأنت مغمض.",
+        "keywords": ["Risk-driven", "Boehm", "Spiral", "Risk analysis"]
+      },
+      {
+        "id": "t5-3",
+        "title": "Agile Methodology & Scrum",
+        "titleAr": "منهجية الأجايل والسكروم",
+        "contentEn": "Agile focus: working software over docs, customer collaboration, responding to change. Scrum concepts: Iteration/Sprint (2-4 weeks), Product Backlog (all features), Sprint Backlog (selected for sprint). Meetings: Daily Stand-up, Sprint Review, Retrospective.",
+        "contentAr": "الأجايل ده أسلوب حياة للمبرمجين دلوقتي. \nقيمه: الناس والتفاعل أهم من الأدوات، كود شغال أهم من ورق كتير، تعاون مع العميل أهم من العقود.\nالسكروم (Scrum) أشهر طريقة في الأجايل:\n- السبرنت (Sprint): فترة من أسبوعين لشهر بنخلص فيها شغل محدد.\n- Backlog: لستة بكل الطلبات.\n- الاجتماعات: بنتقابل كل يوم (Daily Stand-up) عشان نشوف إيه اللي خلص وإيه اللي واقف.",
+        "keywords": ["Scrum", "Sprint", "Backlog", "Stand-up"]
+      },
+      {
+        "id": "t5-4",
+        "title": "DevOps",
+        "titleAr": "الـ DevOps",
+        "contentEn": "Not a process model, but a culture and management approach to bridge the gap between Dev and Ops teams. Enables CI/CD (Continuous Integration/Deployment).",
+        "contentAr": "الـ DevOps مش نموذج زي الووترفول، ده 'ثقافة' بتخلي فريق البرمجة (Dev) وفريق التشغيل (Ops) يشتغلوا مع بعض كأنهم واحد، وده بيسهل إن الكود يترفع عالسيرفر بسرعة ومن غير مشاكل (CI/CD).",
+        "keywords": ["Culture", "Bridge", "CI/CD", "Operations"]
+      }
+    ]
+  },
+  {
+    "id": "lec-6",
+    "title": "Requirements: Functional & Non-Functional",
+    "titleAr": "المتطلبات الوظيفية وغير الوظيفية (المحاضرة ٦)",
+    "description": "Defining system requirements, functional, non-functional, domain requirements, and the SRS document.",
+    "descriptionAr": "تعريف متطلبات النظام، الوظيفية، غير الوظيفية، متطلبات المجال، ومستند الـ SRS.",
+    "topics": [
+      {
+        "id": "t6-1",
+        "title": "Software Requirements Definition",
+        "titleAr": "ما هي متطلبات البرمجيات؟",
+        "contentEn": "Descriptions of functions, features, and constraints. Can range from high-level abstract statements to detailed mathematical specifications.",
+        "contentAr": "هي الوصف لكل الحاجات اللي السيستم لازم يعملها، والميزات اللي فيه، والقيود اللي عليه. ممكن تكون كلام عام أو معادلات رياضية دقيقة.",
+        "keywords": ["Functions", "Features", "Constraints"]
+      },
+      {
+        "id": "t6-2",
+        "title": "Stakeholders",
+        "titleAr": "أصحاب المصلحة (Stakeholders)",
+        "contentEn": "Individuals or organizations affected by the system. Examples: End users, Customers, Project Managers, Developers, Testers.",
+        "contentAr": "أي حد ليه علاقة بالمشروع أو هيتأثر بيه. \n- المستخدم النهائي (End User).\n- العميل (Client): اللي بيدفع الفلوس.\n- المدير، المبرمج، المختبر (Tester).",
+        "keywords": ["End users", "Clients", "Stakeholders"]
+      },
+      {
+        "id": "t6-3",
+        "title": "Functional vs Non-Functional Requirements",
+        "titleAr": "المتطلبات الوظيفية والغير وظيفية",
+        "contentEn": "Functional: WHAT the system does (services). Non-functional: HOW the system operates (reliability, response time, storage). If NFRs aren't met, the system may be useless.",
+        "contentAr": "- الوظيفية (Functional): السيستم بيعمل 'إيه'؟ (زي: السيستم يسحب فلوس، يسجل طالب).\n- غير الوظيفية (Non-Functional): السيستم بيشتغل 'إزاي'؟ (زي: السرعة، الأمان، سهولة الاستخدام).\nخد بالك: لو الـ Non-Functional باظت، السيستم كله ملوش لازمة (Useless) حتى لو بيعمل الوظيفة صح.",
+        "examTrick": "سؤال امتحان: الـ Non-Functional ممكن تكون أهم وأخطر من الـ Functional.",
+        "keywords": ["Functional", "Non-Functional", "Performance", "Security"]
+      },
+      {
+        "id": "t6-4",
+        "title": "Domain Requirements",
+        "titleAr": "متطلبات المجال (Domain)",
+        "contentEn": "Requirements coming from the application domain or environment (e.g., medical standards for hospital systems).",
+        "contentAr": "دي متطلبات جاية من 'بيئة' الشغل نفسها. يعني لو بتعمل سيستم لمستشفى، لازم يتبع القوانين الطبية، دي اسمها Domain Requirements.",
+        "keywords": ["Application domain", "Environment", "Standards"]
+      },
+      {
+        "id": "t6-5",
+        "title": "The SRS Document",
+        "titleAr": "مستند الـ SRS",
+        "contentEn": "Software Requirements Specification. A formal document describing what the system should do (WHAT) rather than how it should do it (HOW). Must be Complete, Consistent, Correct, Unambiguous, and Verifiable.",
+        "contentAr": "ده 'الدستور' بتاع المشروع. مستند رسمي بيكتب فيه كل المتطلبات بالتفصيل. \nالقاعدة الذهبية: الـ SRS بيقول السيستم هيعمل 'إيه' (WHAT) مش 'إزاي' (HOW).\nشروطه:\n- كامل (Complete).\n- متسق (Consistent): مفيش متطلب بيعكس التاني.\n- واضح (Unambiguous): ليه معنى واحد بس.\n- قابل للتحقق (Verifiable): نقدر نقيسه ونختبره.",
+        "keywords": ["SRS", "Specification", "Verifiable", "Unambiguous"]
+      }
+    ]
+  },
+  {
+    "id": "lec-7",
+    "title": "Requirements Engineering Process",
+    "titleAr": "عملية هندسة المتطلبات (المحاضرة ٧)",
+    "description": "The systematic process of identifying, validating, and managing requirements.",
+    "descriptionAr": "العملية المنظمة لتحديد وتأكيد وإدارة المتطلبات.",
+    "topics": [
+      {
+        "id": "t7-1",
+        "title": "Requirements Engineering Process",
+        "titleAr": "خطوات هندسة المتطلبات",
+        "contentEn": "1. Feasibility Study. 2. Elicitation and Analysis. 3. Specification. 4. Validation. 5. Management.",
+        "contentAr": "الموضوع مش عشوائي، بيمشي كدة:\n١. دراسة الجدوى: هل المشروع يستحق العناء؟\n٢. الاستنباط والتحليل (Elicitation): نقعد نجمع المتطلبات.\n٣. التوصيف (Specification): نكتب الـ SRS.\n٤. التحقق (Validation): نتأكد إن اللي كتبناه هو اللي العميل عايزه فعلاً.\n٥. الإدارة (Management): نتحكم في التغييرات اللي هتحصل بعدين.",
+        "keywords": ["Feasibility", "Elicitation", "Validation", "Management"]
+      },
+      {
+        "id": "t7-2",
+        "title": "Elicitation Methods",
+        "titleAr": "طرق جمع المتطلبات (Elicitation)",
+        "contentEn": "Interviews (Structured, Unstructured, Semi-structured), Questionnaires (Open-ended, Closed-ended), Observation, Examination of documentation.",
+        "contentAr": "إزاي بنطلع المتطلبات من دماغ العميل؟\n- المقابلات (Interviews): أحسن طريقة.\n- الاستبيانات (Questionnaires): لو فيه ناس كتير (زي آلاف الموظفين).\n- الملاحظة (Observation): تنزل تقعد معاهم وتشوفهم بيشتغلوا إزاي.\n- المستندات: تقرأ الدفاتر والورق القديم بتاعهم.",
+        "keywords": ["Interviews", "Questionnaires", "Observation"]
+      },
+      {
+        "id": "t7-3",
+        "title": "Requirements Validation",
+        "titleAr": "التحقق من المتطلبات (Validation)",
+        "contentEn": "Ensuring requirements define the system the customer wants. Fixing problems here is much cheaper than fixing them after coding.",
+        "contentAr": "بنتأكد إن اللي كتبناه هو اللي العميل عايزه بالمللي. \nنصيحة: صلح الغلط في الورق دلوقتي (في مرحلة الـ Requirements) أرخص ١٠٠ مرة من إنك تكتشفه بعد ما الكود يتكتب وتضطر تهد اللي بنيته.",
+        "keywords": ["Cheaper fixing", "Customer needs"]
+      }
+    ]
+  },
+  {
+    "id": "lec-8",
+    "title": "UML Diagrams Overview",
+    "titleAr": "نظرة عامة على رسومات الـ UML (المحاضرة ٨)",
+    "description": "Introduction to Unified Modeling Language, categories (Structural vs Behavioral), and tools.",
+    "descriptionAr": "مقدمة في لغة UML، أنواعها (هيكلية مقابل سلوكية)، والأدوات المستخدمة.",
+    "topics": [
+      {
+        "id": "t8-1",
+        "title": "What is UML?",
+        "titleAr": "ما هي الـ UML؟",
+        "contentEn": "Standard visual language to represent and design systems. Not a programming language. Linked with Object-Oriented design.",
+        "contentAr": "هي لغة رسومات قياسية. بنرسم بيها بدل ما نتكلم ونكتب كلام كتير. هي مش لغة برمجة، بس مرتبطة جداً بالـ OOP والـ Design.",
+        "keywords": ["Visual language", "Design", "Standard"]
+      },
+      {
+        "id": "t8-2",
+        "title": "Categories of UML Diagrams",
+        "titleAr": "أنواع رسومات الـ UML",
+        "contentEn": "1. Structural Diagrams (Static aspects): Class, Component, Deployment. 2. Behavioral Diagrams (Dynamic aspects): Use Case, Sequence, Activity, State.",
+        "contentAr": "بتنقسم لنوعين كبار:\n١. رسومات هيكلية (Structural): بتوصف السيستم وهو 'واقف' (ثابت). زي الـ Class Diagram.\n٢. رسومات سلوكية (Behavioral): بتوصف السيستم وهو 'شغال' (حركة). زي الـ Use Case والـ Sequence.",
+        "examTrick": "سؤال مشهور: هل الـ Use Case هيكلي ولا سلوكي؟ الإجابة: سلوكي (Behavioral).",
+        "keywords": ["Structural", "Behavioral", "Static", "Dynamic"]
+      },
+      {
+        "id": "t8-3",
+        "title": "UML Diagram Tools",
+        "titleAr": "أدوات الرسم",
+        "contentEn": "Online: Lucidchart, draw.io, Creately. Offline: MS Visio, StarUML, Visual Paradigm. Coding: PlantUML.",
+        "contentAr": "فيه أدوات كتير بنرسم بيها:\n- أونلاين: draw.io و Lucidchart.\n- أوفلاين: Microsoft Visio و StarUML.\n- بالكود: PlantUML (بتكتب كود وهو يطلعلك الرسمة).",
+        "keywords": ["Lucidchart", "draw.io", "Visio", "PlantUML"]
+      }
+    ]
+  },
+  {
+    "id": "lec-9",
+    "title": "Software Design Principles & Levels",
+    "titleAr": "مبادئ ومستويات التصميم (المحاضرة ٩)",
+    "description": "Design process, abstraction, modularity, cohesion vs coupling, and design levels.",
+    "descriptionAr": "عملية التصميم، التجريد، الموديلاريتي، الترابط والاعتمادية، ومستويات التصميم.",
+    "topics": [
+      {
+        "id": "t9-1",
+        "title": "Design Principles",
+        "titleAr": "مبادئ التصميم",
+        "contentEn": "1. Abstraction (Focus on essential). 2. Modularity (Divide system). 3. Separation of Concerns (One responsibility per module).",
+        "contentAr": "عشان تصميمك يكون نظيف:\n- التجريد (Abstraction): ركز على المهم وسيب التفاصيل التافهة.\n- الموديلاريتي (Modularity): قطع السيستم حتت صغيرة.\n- فصل الاهتمامات (SoC): كل موديول يشيل مسؤولية واحدة بس.",
+        "keywords": ["Abstraction", "Modularity", "SoC"]
+      },
+      {
+        "id": "t9-2",
+        "title": "Cohesion vs Coupling (Critical)",
+        "titleAr": "الترابط (Cohesion) مقابل الاعتمادية (Coupling)",
+        "contentEn": "Cohesion: How well elements inside a module work together. Coupling: Measure of how much one module depends on others. Aim: High Cohesion, Low Coupling.",
+        "contentAr": "ده أهم مبدأ في المنهج كله:\n- Cohesion: الموديول من جوه مترابط وبيعمل حاجة واحدة بس (زي فريق كورة متناغم). إحنا عايزين Cohesion عالي (High).\n- Coupling: الموديولات معتمدة على بعضها. لو الموديول A عشان يشتغل لازم ينادي B و C و D، يبقى ده High Coupling وده وحش جداً. إحنا عايزين Coupling قليل (Low).",
+        "examTrick": "الهدف دايماً: High Cohesion & Low Coupling. بييجي في الامتحان كتير جداً.",
+        "keywords": ["High Cohesion", "Low Coupling", "Interdependence"]
+      },
+      {
+        "id": "t9-3",
+        "title": "Software Design Levels",
+        "titleAr": "مستويات التصميم",
+        "contentEn": "1. Interface Design (UI/Wireframing - specification of interaction). 2. Architectural Design (High-level components and relationships). 3. Detailed Design (Low-level elements, processing logic, algorithms).",
+        "contentAr": "التصميم مش ليفل واحد:\n١. تصميم الواجهة (Interface Design): بنعمل Wireframes ونحدد شكل التعامل مع اليوزر.\n٢. التصميم المعماري (Architectural): بنحدد المكونات الكبيرة والعلاقات بينهم (High-Level).\n٣. التصميم التفصيلي (Detailed): بندخل في تفاصيل كل موديول من جوه والـ Algorithms (Low-Level).",
+        "keywords": ["Interface", "Architectural", "Detailed"]
+      }
+    ]
+  },
+  {
+    "id": "lec-10",
+    "title": "Sequence Diagrams",
+    "titleAr": "مخططات التسلسل (المحاضرة ١٠)",
+    "description": "Modeling interactions over time, notations, messages, and fragments.",
+    "descriptionAr": "نمذجة التفاعلات عبر الزمن، الرموز، الرسائل، والمقاطع.",
+    "topics": [
+      {
+        "id": "t10-1",
+        "title": "Sequence Diagram Notations",
+        "titleAr": "رموز الـ Sequence Diagram",
+        "contentEn": "Actor (external), Object (rectangle), Lifeline (dotted line showing existence over time), Activation (thick box showing operation period).",
+        "contentAr": "الرموز الأساسية:\n- Actor: الشخص اللي بره السيستم.\n- Object: المستطيل اللي بيمثل المكون جوه السيستم.\n- Lifeline: الخط المنقط اللي نازل من الأوبجكت، بيمثل 'عمر' الأوبجكت ده في العملية.\n- Activation: المستطيل الصغير اللي فوق الخط المنقط، بيبين إن الأوبجكت 'شغال' دلوقتي.",
+        "keywords": ["Lifeline", "Activation", "Object", "Actor"]
+      },
+      {
+        "id": "t10-2",
+        "title": "Message Types",
+        "titleAr": "أنواع الرسائل",
+        "contentEn": "Call Message (solid arrow), Return Message (dashed arrow), Self Message (loop arrow), Create Message (instantiation), Destroy Message (X mark at end of lifeline).",
+        "contentAr": "إزاي الأوبجكتس بتكلم بعض؟\n- Call: سهم متصل (أنا بنادي دالة).\n- Return: سهم منقط (ده الرد أو الـ Result).\n- Self Message: سهم بيلف حوالين نفسه (الأوبجكت بيعمل معالجة داخلية).\n- Create: لما أعمل أوبجكت جديد.\n- Destroy: لما أموت الأوبجكت (بنحط علامة X في آخر الخط).",
+        "keywords": ["Call", "Return", "Self-message", "Destroy"]
+      },
+      {
+        "id": "t10-3",
+        "title": "Frames / Fragments",
+        "titleAr": "المقاطع (Fragments)",
+        "contentEn": "alt (if/else), opt (single optional path), loop (repetition).",
+        "contentAr": "دي مربعات كبيرة بنرسمها جوه الـ Diagram:\n- alt: يعني فيه شرط (If/Else). لو كذا يحصل كذا، ولو كذا يحصل كذا.\n- opt: يعني حاجة اختيارية (Optional). ممكن تحصل وممكن لأ.\n- loop: يعني حاجة بتتكرر كذا مرة.",
+        "examTrick": "الـ alt لازم تختار طريق واحد منهم، الـ opt ممكن تعدي عليه وممكن لا.",
+        "keywords": ["alt", "opt", "loop", "Fragments"]
+      }
+    ]
+  },
+  {
+    "id": "lec-11",
+    "title": "Activity & Class Diagrams",
+    "titleAr": "مخططات النشاط والفئات (المحاضرة ١١)",
+    "description": "Workflow modeling with Activity diagrams and structural modeling with Class diagrams.",
+    "descriptionAr": "نمذجة سير العمل بمخططات النشاط والنمذجة الهيكلية بمخططات الفئات.",
+    "topics": [
+      {
+        "id": "t11-1",
+        "title": "Activity Diagram Elements",
+        "titleAr": "عناصر الـ Activity Diagram",
+        "contentEn": "Initial State (black circle), Activity (rounded rectangle), Decision (diamond), Fork (one split into parallel), Join (parallel combined into one), Swimlanes (grouping by actor).",
+        "contentAr": "زي الـ Flowchart بس أشطر:\n- البداية: نقطة سوداء.\n- Activity: مستطيل مستدير الأطراف.\n- القرار (Decision): معين (زي الـ If).\n- Fork: خط تخين بيطلع منه كذا سهم (عمليات بتحصل في نفس الوقت - Parallel).\n- Join: خط تخين بيجمع الأسهم دي تاني.\n- Swimlanes: حارات بتقسم الشغل حسب 'مين اللي بيعمله'.",
+        "keywords": ["Fork", "Join", "Swimlanes", "Parallel"]
+      },
+      {
+        "id": "t11-2",
+        "title": "Class Diagram Details",
+        "titleAr": "تفاصيل الـ Class Diagram",
+        "contentEn": "Class structure: Name, Attributes, Methods. Visibility: + (Public), - (Private), # (Protected). Relationships: Association, Aggregation (Hollow diamond), Composition (Filled diamond), Generalization (Inheritance - hollow arrow).",
+        "contentAr": "أهم رسمة في التصميم:\n- الـ Class: مستطيل فيه ٣ حتت (الاسم، الخصائص، الدوال).\n- الرؤية (Visibility):\n  - (+) يعني الكل يشوفه (Public).\n  - (-) يعني جوه الكلاس بس (Private).\n- العلاقات:\n  - Generalization: وراثة (is-a).\n  - Multiplicity: بيبين العدد (0..1, 1..*, 1).",
+        "examTrick": "سؤال Multiplicity بييجي كتير. 0..* يعني Zero or many، و 1..* يعني One or many.",
+        "keywords": ["Visibility", "Multiplicity", "Association"]
+      }
+    ]
+  }
+]

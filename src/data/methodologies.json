@@ -1,0 +1,100 @@
+[
+  {
+    "id": "waterfall",
+    "name": "Waterfall Model",
+    "nameAr": "نموذج الشلال (Waterfall)",
+    "description": "A linear and sequential software development process where each stage must be fully planned and completed before the next begins.",
+    "descriptionAr": "عملية تطوير خطية ومتسلسلة، كل مرحلة لازم تخلص بالكامل وتتخطط قبل ما اللي بعدها تبدأ.",
+    "whenToUseAr": "لما تكون المتطلبات واضحة جداً وثابتة (Stable requirements) ومش هتتغير طول المشروع.",
+    "whyAr": "لأنه بسيط في الإدارة وبيطلع توثيق (Documentation) ممتاز لكل مرحلة.",
+    "advantages": [
+      "بسيط وسهل الفهم والإدارة (Simple and easy to manage).",
+      "نقاط توقف واضحة (Clear milestones).",
+      "توثيق منضبط (Disciplined documentation)."
+    ],
+    "disadvantages": [
+      "صعب جداً نعدل في المتطلبات بعد ما نبدأ (Frozen requirements).",
+      "العميل مبيشوفش حاجة غير في الآخر خالص (No early feedback).",
+      "تكلفة تصليح الأخطاء في الآخر بتبقى ضخمة (High cost of change)."
+    ],
+    "examTrick": "لو السؤال فيه 'Linear' أو 'Frozen Requirements' أو 'Well understood requirements'، الإجابة دايماً Waterfall."
+  },
+  {
+    "id": "agile",
+    "name": "Agile Methodology",
+    "nameAr": "منهجية الأجايل (Agile)",
+    "description": "A flexible, iterative approach that focuses on delivering small, working increments quickly and responding to changing requirements.",
+    "descriptionAr": "نهج مرن وتكراري بيركز على تسليم أجزاء صغيرة شغالة بسرعة، والاستجابة لتغييرات العميل المستمرة.",
+    "whenToUseAr": "في المشاريع اللي المتطلبات فيها بتتغير بسرعة، أو لو العميل عايز يشوف نتائج ملموسة في وقت قصير.",
+    "whyAr": "عشان يقلل المخاطر ويضمن إن السوفت وير بيحقق رغبة العميل الحقيقية عن طريق الـ Feedback المستمر.",
+    "advantages": [
+      "تسليم سريع لمنتج شغال (Fast delivery).",
+      "مرونة عالية جداً في التغيير (Flexible).",
+      "تفاعل مستمر مع العميل (Customer involvement)."
+    ],
+    "disadvantages": [
+      "صعب نتوقع التكلفة والوقت النهائي بدقة (Less predictable).",
+      "بيحتاج فريق خبير ومنظم ذاتياً (Experienced teams).",
+      "التوثيق فيه بيبقى قليل جداً (Minimal documentation)."
+    ],
+    "examTrick": "ركز على مبادئ الـ Agile Manifesto: 'Working software over documentation' و 'Responding to change over following a plan'."
+  },
+  {
+    "id": "spiral",
+    "name": "Spiral Model",
+    "nameAr": "النموذج الحلزوني (Spiral)",
+    "description": "A risk-driven software development process that combines elements of both iterative and waterfall models.",
+    "descriptionAr": "عملية تطوير بتتمحور حول 'إدارة المخاطر'، بتجمع بين الميزة التكرارية ومنهجية الشلال المنظمة.",
+    "whenToUseAr": "في المشاريع الضخمة، المعقدة، واللي فيها مخاطرة عالية (High-risk projects).",
+    "whyAr": "لأنه بيعمل تحليل مخاطر (Risk Analysis) في كل لفة (Loop)، فبيكتشف المشاكل قبل ما تحصل.",
+    "advantages": [
+      "أقوى نموذج في اكتشاف وتقليل المخاطر (Risk reduction).",
+      "مرن وبيسمح بالتغيير في أي مرحلة.",
+      "مناسب جداً للأنظمة الكبيرة (Large systems)."
+    ],
+    "disadvantages": [
+      "غالي جداً وبياخد وقت طويل (Expensive and time-consuming).",
+      "بيحتاج خبراء متخصصين في تحليل المخاطر.",
+      "صعب تطبيقه في المشاريع الصغيرة."
+    ],
+    "examTrick": "أول ما تشوف كلمة 'Risk Analysis' أو 'Risk-driven' في السؤال، دي علامة الـ Spiral Model فوراً."
+  },
+  {
+    "id": "incremental",
+    "name": "Incremental Model",
+    "nameAr": "النموذج التزايدي (Incremental)",
+    "description": "The system is designed, implemented, and delivered in small parts called increments. Each adds new features.",
+    "descriptionAr": "السيستم بيتصمم ويتنفذ ويتسلم على أجزاء (Increments)، كل جزء بيضيف ميزات جديدة لللي قبله.",
+    "whenToUseAr": "لو العميل محتاج وظائف معينة بسرعة، وباقي السيستم ممكن يستنى شوية.",
+    "whyAr": "عشان العميل يبدأ يستفيد من السيستم (Customer Value) من غير ما يستنى المشروع كله يخلص.",
+    "advantages": [
+      "العميل بياخد قيمة بسرعة (Early value).",
+      "الأجزاء الأولى بتشتغل كـ Prototype للأجزاء اللي بعدها.",
+      "خطر فشل المشروع كله بيبقى قليل."
+    ],
+    "disadvantages": [
+      "صعب تقسم المتطلبات لأجزاء متساوية ومناسبة.",
+      "ممكن يحتاج إعادة كود (Rework) لو المتطلبات اتغيرت جامد في نص السكة."
+    ],
+    "examTrick": "الـ Incremental بيركز على الـ 'Priority'، بنخلص الـ High Priority الأول."
+  },
+  {
+    "id": "cbse",
+    "name": "Component-Based (CBSE)",
+    "nameAr": "التطوير القائم على المكونات",
+    "description": "Systems are built by assembling existing, reusable components instead of creating everything from scratch.",
+    "descriptionAr": "بناء الأنظمة عن طريق تجميع مكونات جاهزة (Reusable components) وموجودة فعلاً بدل ما نبدأ من الصفر.",
+    "whenToUseAr": "لما نكون عايزين نخلص بسرعة وعندنا مكتبات أو أنظمة جاهزة (COTS) ممكن نستخدمها.",
+    "whyAr": "بيوفر وقت ومجهود جبار، وبيركز على الـ Integration أكتر من الـ Coding.",
+    "advantages": [
+      "تقليل وقت التطوير بشكل كبير (Reduced time).",
+      "تقليل التكلفة والمخاطر.",
+      "زيادة الموثوقية لإن المكونات دي متجربة قبل كدة."
+    ],
+    "disadvantages": [
+      "صعوبة التحكم في تطور المكونات الجاهزة (Lost control).",
+      "ممكن المكون الجاهز مبيحققش طلب العميل بنسبة ١٠٠٪."
+    ],
+    "examTrick": "الكلمات الدالة: 'Reuse', 'Assembling', 'COTS (Commercial-off-the-shelf)'."
+  }
+]

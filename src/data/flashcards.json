@@ -1,0 +1,37 @@
+[
+  {
+    "id": "fc1",
+    "frontEn": "Waterfall Model",
+    "frontAr": "نموذج الووترفول (الشلال)",
+    "backEn": "A linear, sequential model where each phase must be completed before the next begins.",
+    "backAr": "نموذج خطي متسلسل، كل مرحلة لازم تخلص عشان اللي بعدها تبدأ. متطلباته ثابتة (Frozen) والتعديل فيه صعب."
+  },
+  {
+    "id": "fc2",
+    "frontEn": "Aggregation vs Composition",
+    "frontAr": "الفرق بين الـ Aggregation والـ Composition",
+    "backEn": "Aggregation: Weak relationship (Hollow diamond). Composition: Strong relationship (Filled diamond).",
+    "backAr": "Aggregation: علاقة ضعيفة وينفصلوا (معين فاضي). Composition: علاقة قوية ولا ينفصلوا (معين مظلل أسود)."
+  },
+  {
+    "id": "fc3",
+    "frontEn": "Functional Requirements",
+    "frontAr": "المتطلبات الوظيفية",
+    "backEn": "Describe WHAT the system should do (e.g., login, add to cart).",
+    "backAr": "بتوصف 'إيه' اللي السيستم لازم يعمله (زي الدخول أو الشراء). لو مش موجودة، السيستم مش هيشتغل كـ Function."
+  },
+  {
+    "id": "fc4",
+    "frontEn": "Non-Functional Requirements",
+    "frontAr": "المتطلبات الغير وظيفية",
+    "backEn": "Describe HOW the system should operate (e.g., performance, security).",
+    "backAr": "بتوصف 'إزاي' السيستم بيشتغل. بتشمل السرعة، الأمان، الاعتمادية. دي ممكن لو مش موجودة تخلي السيستم Useless."
+  },
+  {
+    "id": "fc5",
+    "frontEn": "Include vs Extend",
+    "frontAr": "الفرق بين Include و Extend",
+    "backEn": "Include is mandatory. Extend is optional.",
+    "backAr": "Include: لازم يحصل (إجباري). Extend: ممكن يحصل وممكن لأ (اختياري)."
+  }
+]

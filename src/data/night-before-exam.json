@@ -1,0 +1,42 @@
+{
+  "title": "ليلة الامتحان - الخلاصة",
+  "subtitle": "ركز على النقط دي كويس جداً عشان دي بتيجي في الامتحان بشكل متكرر",
+  "sections": [
+    {
+      "title": "الفرق بين الـ Aggregation والـ Composition (مهم جداً)",
+      "points": [
+        "Aggregation: معين فاضي (Hollow Diamond). علاقة ضعيفة. مثال: القسم والدكاترة.",
+        "Composition: معين أسود (Filled Diamond). علاقة قوية جداً. مثال: الفندق والغرف."
+      ]
+    },
+    {
+      "title": "Include vs Extend في الـ Use Case",
+      "points": [
+        "Include: إجباري (Mandatory). السهم المنقط رايح من الأساسي للـ included.",
+        "Extend: اختياري (Optional). السهم المنقط طالع من الـ extend ورايح للأساسي."
+      ]
+    },
+    {
+      "title": "SDLC Models الاختيارات في الامتحان",
+      "points": [
+        "لو المتطلبات ثابتة ومش هتتغير: Waterfall",
+        "لو المتطلبات بتتغير بسرعة ومحتاجين نخلص جزء يشتغل بسرعة: Agile أو Iterative",
+        "لو المشروع فيه مخاطر كبيرة (High Risk): Spiral Model"
+      ]
+    },
+    {
+      "title": "Functional vs Non-Functional",
+      "points": [
+        "Functional: السيستم بيعمل إيه (WHAT). زي إن اليوزر يعمل Login.",
+        "Non-Functional: السيستم بيعمله إزاي (HOW). السرعة، الأمان، الاعتمادية. دي لو باظت السيستم يترمى."
+      ]
+    },
+    {
+      "title": "Cohesion vs Coupling",
+      "points": [
+        "Cohesion (ترابط الموديول من جوه): لازم يكون High (عالي).",
+        "Coupling (اعتماد الموديولات على بعضها): لازم يكون Low (قليل)."
+      ]
+    }
+  ]
+}
